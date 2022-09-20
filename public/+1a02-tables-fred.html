@@ -28,7 +28,14 @@ then make a link and image table with border = 0<br><br><br>
 
 <h2>Advanced</h2>
 
+Load image to get it to move 10 pixels to the left using the button below<br>
+<image id="myImage01" src"" style="position:relative; left:0; width:50 "><br>
   
+  <input type=button value"Go left" onclick="{
+                                             document.getElementById('myImage01').style.left = '200px'
+                                             document.getElementById('myDiv01').innerHTML = 'It went left'
+                                             }">
+  <div id="myDiv01">...</div>
 
 
    
