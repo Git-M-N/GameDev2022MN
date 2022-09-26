@@ -1,12 +1,53 @@
+<!DOCTYPE html>
 <html>
 <head>
 <style>
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;}
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) scale(0);
+  background:#7E5109 ;
+  width:450px;
+  height:220px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+.popup .close-btn {
+position:absolute;
+right:20px;
+top:20px;
+width:30px;
+height:30px;
+background:#222;
+color:#fff ;
+font-size:25px;
+font-weight:600;
+line-height:30px;
+text-align:center;
+border-radius:50%;
+}
+.popup.active .overlay {
+  display:block;
+}
+.popup.active .content {
+transition:all 300ms ease-in-out;
+transform:translate(-50%, -50%) scale(1);
+}
+
 </style>
 </head>
-
-<body>
-
-
 <h1 align=center>T1A04 CSS by Fred</h1>
 <body id="mainBody"> 
 Reference Link
@@ -24,10 +65,10 @@ color: #00ff00
 }
 </pre><br>
 
-I do CSS inside the tag. It overpowers all other methods<<br>
+I do CSS inside the tag. It overpowers all other methods<br>
 
 <b > This is bold</b><br>
-<b id="myB1" style"color:#00ff00; background-Color:blue; "> This is bold</b>
+<b id="myB1" style="color:#00ff00; background-Color:blue;"> This is bold</b>
 <input type=button value=Change onclick="{
                                          document.getElementById('myB1').style.color = 'red'
                                          document.getElementById('myB1').style.backgroundColor = 'yellow'
@@ -53,18 +94,16 @@ Advanced see if you move this textarea
 
  <div class="popup" id="popup-1">
    <div class="overlay"></div>
-   <div class"content">
+   <div class="content">
      <div class="close-btn" onclick="togglePopup()">&times;
-       <h1> Title </h1>
-       <p>
-       Hello
-       </p>
+      <img src="https://avatars.githubusercontent.com/u/5605614?v=4" alt="Mr.Ellis">
        </div>
    </div>
    
    <button onclick="togglePopup()">Show Popup</button>
 
                                          
-</body>                                       
-
+                                         </div>                                      
+                                         </body>
 </html>
+}
