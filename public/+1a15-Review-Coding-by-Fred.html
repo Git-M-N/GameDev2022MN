@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> body{
+    background-image: url('https://i.pinimg.com/originals/3a/de/d3/3aded3f56affa6043939552cdb6db2a3.gif');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}</style>
+</head>
 <input type="text" id="myTextIn01" value="Stuff written here" size="30">  
     
 <input id="myButton123" type="button" value="Input / Output" onclick="{
@@ -8,7 +22,6 @@
 <input type="text" id="myTextIn1" value="3.45" size="30">  + <input type="text" id="myTextIn2" value="6.78" size="30"> 
 
 <input id="myButton124" type="button" value="Add the numbers" onclick="{
-
    var my1 = document.getElementById('myTextIn1').value  
    var my2 = document.getElementById('myTextIn2').value  
    document.getElementById('myDiv124').innerHTML =   'Numbers added as strings ' +  my1 + ' + ' +  my2 + ' = ' +  (my1 + my2)  + '<br>'   
@@ -81,7 +94,6 @@ Change the number <input type="number" id="myTextIf" value="4" size="10">
       document.getElementById('myDiv126').innerHTML += 'That number equals 4 and is less than 8 <br>'
    }     
                                                                        
-
                                                                     
                                                                    
 }"><br><br>
@@ -123,12 +135,10 @@ Store these Items in a Javascript object <br>
 
 <div id='myDiv128'>...</div><br>
 <input id="myButton129" type="button" value="Make and use a function" onclick="{
-
 function myFun(myVar){
   document.getElementById('myDiv129').innerHTML = 'The function made this line. ' + myVar + ' was passed to the function <br>'                                                                     
 }                                                                     
                                                                       
-
 myFun('28')      // This activates the function                                                                
                                                                       
 }"><br><br>
@@ -141,11 +151,9 @@ myFun('28')      // This activates the function
        this.myName = passName;
        this.myAge = passAge;
     }
-
     myShow(){
        document.getElementById('myDiv130').innerHTML = 'Hello '+ this.myName + '. You are ' + this.myAge + ' years old<br>'
     }
-
  }  // end class myAnimal
                                                              
    
@@ -184,3 +192,4 @@ class myCat extends myAnimal {
 }"><br><br>
 
 <div id='myDiv132'>...</div><br>
+</html>
