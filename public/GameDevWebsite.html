@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-    <title>GameDev2022 Website</title>
-    <style>
-      
-      body{
-    background-image: url('https://i.pinimg.com/originals/88/15/63/881563d6444b370fa4ceea0c3183bb4c.gif');
+<html>
+<head>
+  <script>function togglePopup(){
+document.getElementById("popup-1").classList.toggle("active");}</script>
+<style>
+
+ body{
+    background-image: url('https://news.artnet.com/app/news-upload/2014/07/2014-july-30-net-art-history-3.gif');
     background-size: cover;
     
     
@@ -15,44 +15,77 @@
     padding:0;
     margin:0;
 }
-      img.profiles {
-        width: 100px;
-        border-radius: 50px;
-        float: left;
-        margin-right: 10px;
-      }
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;}
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) scale(0);
+  background:#7E5109 ;
+  width:450px;
+  height:220px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+.popup .close-btn {
+position:absolute;
+right:20px;
+top:20px;
+width:30px;
+height:30px;
+background:#222;
+color:#fff ;
+font-size:25px;
+font-weight:600;
+line-height:30px;
+text-align:center;
+border-radius:50%;
+}
+.popup.active .overlay {
+  display:block;
+}
+.popup.active .content {
+transition:all 300ms ease-in-out;
+transform:translate(-50%, -50%) scale(1);
+}
 
-      .username {
-        font-weight: bolder;
-      }
-      em.darkcyan {
-        color: darkcyan;
-        font-style: oblique;
-       em.red {
-          color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <img
-      class="profiles"
-      src="capybara-square-1.jpg.optimal.jpg"
-      alt="capybara"
-    />
-    <p class="username">Git-M-N</p>
-    <p><em class="red">This is my</em> <em class="darkcyan">Gamedev2022</em> Website</p>
-  
-  
-    <h1>Video:</h1>
-  
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/wEWF2xh5E8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</style>
+</head>
 
+<body>
+<h1>
+This is my Web Page
+</h1>
 
+ <h3>Link back to main page:</h3>
+    <a href="https://git-m-n.github.io/GameDev2022MN/public/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSptIeNbHwaCra8Ujb-ct1yX12wmPLtCcN2fQ&usqp=CAU" alt="click-here-button"></a>
 
-    <h2>Link back to main page:</h2>
-    <a href="https://git-m-n.github.io/GameDev2022MN/public/"><img src="click-here-button.jpg" alt="click-here-button"></a>
-    
-    
-    
-  </body>
-</html>
+ <div class="popup" id="popup-1"> <br>
+   <div class="overlay"></div>
+   <div class="content">
+     <div class="close-btn" onclick="togglePopup()">&times;
+      <div style="position:relative; height:60px;">
+<iframe top:600x; left:-680px; width:65px; height:65px; src="https://www.youtube.com/embed/euik1Zrs30w" src="https://as1.ftcdn.net/v2/jpg/01/22/06/50/1000_F_122065003_dolgUjKVql7xrQ13u7uqcFQ3aJmR1DyU.jpg"
+   style="position:relative; top:700x; left:-380px; width:400px; height:150px; border:none;"
+   alt="photo of Hand"
+   title="Photo of Hand"></iframe>
+</div>
+       </div>
+   </div>
+   
+   <button onclick="togglePopup()">Watch Youtube Video</button>
+
+                                         
+                                         </div>                     <br>                 
+                                         </body> 
+</html> 
