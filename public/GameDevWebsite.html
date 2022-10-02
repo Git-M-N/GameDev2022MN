@@ -4,6 +4,28 @@
   <script>function togglePopup(){
 document.getElementById("popup-1").classList.toggle("active");}</script>
 <style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+table.names tr:nth-child(even) {
+  background-color: #eee;
+}
+table.names tr:nth-child(odd) {
+  background-color:#fff;
+}
+table.names th {
+  background-color: black;
+  color: white
+}
+
 
  body{
     background-image: url('https://news.artnet.com/app/news-upload/2014/07/2014-july-30-net-art-history-3.gif');
@@ -70,6 +92,31 @@ This is my Web Page
  <h3>Link back to main page:</h3>
     <a href="https://git-m-n.github.io/GameDev2022MN/public/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSptIeNbHwaCra8Ujb-ct1yX12wmPLtCcN2fQ&usqp=CAU" alt="click-here-button"></a>
 
+<h1>
+A list of Things i want to 3D Print
+</h1>
+<table class="names">
+  <tr>
+    <th>3D Prints</th>
+    <th>Size</th> 
+    <th>How much</th>
+  </tr>
+  <tr>
+    <td>8-Bit Mario</td>
+    <td>Medium</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Stars</td>
+    <td>Small</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Phone Holder</td>
+    <td>Medium to Big</td>
+    <td>1</td>
+  </tr>
+</table>
  <div class="popup" id="popup-1"> <br>
    <div class="overlay"></div>
    <div class="content">
