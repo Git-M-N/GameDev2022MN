@@ -3,6 +3,26 @@
 <head>
  
 <style>
+.cartoon {
+  font-family: 'Brush Script MT', cursive;
+}
+.thick {
+  font-family: Copperplate, Papyrus, fantasy;
+}
+
+
+
+ body{
+    background-color:#7BA4A6;
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
 #mydiv {
   position: absolute;
   z-index: 9;
@@ -41,16 +61,7 @@ table.names th {
 }
 
 
- body{
-    background-image: url('https://news.artnet.com/app/news-upload/2014/07/2014-july-30-net-art-history-3.gif');
-    background-size: cover;
-    
-    
-    
-    height: 100vh;
-    padding:0;
-    margin:0;
-}
+
 .popup .overlay {
   position:fixed;
   top:0px;
@@ -65,7 +76,7 @@ table.names th {
   top:50%;
   left:50%;
   transform:translate(-50%, -50%) scale(0);
-  background:#7E5109 ;
+  background:#7BA4A6 ;
   width:450px;
   height:220px;
   z-index:2;
@@ -98,34 +109,35 @@ transform:translate(-50%, -50%) scale(1);
 </style>
 </head>
 
-<body>
-<h1>
+
+<body class="div">
+<h1 class="cartoon">
 This is my Web Page
 </h1>
 
- <h3>Link back to main page:</h3>
+ <h3 class="cartoon">Link back to main page:</h3>
     <a href="https://git-m-n.github.io/GameDev2022MN/public/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSptIeNbHwaCra8Ujb-ct1yX12wmPLtCcN2fQ&usqp=CAU" alt="click-here-button"></a>
 
-<h1>
+<h1 class="thick">
 A list of Things i want to 3D Print
 </h1>
 <table class="names">
   <tr>
     <th>3D Prints</th>
     <th>Size</th> 
-    <th>How much</th>
+    <th class="cartoon">How much</th>
   </tr>
-  <tr>
+  <tr class="cartoon">
     <td>8-Bit Mario</td>
     <td>Medium</td>
-    <td>1</td>
+    <td >1</td>
   </tr>
-  <tr>
+  <tr class="cartoon">
     <td>Stars</td>
     <td>Small</td>
     <td>8</td>
   </tr>
-  <tr>
+  <tr class="cartoon">
     <td>Phone Holder</td>
     <td>Medium to Big</td>
     <td>1</td>
@@ -144,12 +156,12 @@ A list of Things i want to 3D Print
        </div>
    </div>
    
-   <button onclick="togglePopup()">Watch Youtube Video</button>
+   <button class="thick" onclick="togglePopup()">Watch Youtube Video</button>
 
                                          
                                          </div>                     <br>      
    <div id="mydiv">
-  <div id="mydivheader">Hold left click here to move</div>
+  <div  class="cartoon" id="mydivheader">Hold left click here to move</div>
  <p>
  <img src="https://c.tenor.com/aaEMtGfZFbkAAAAj/rat-spinning.gif" alt="Jeremy Ellis" width="100" height="100">
  </p>
@@ -195,4 +207,5 @@ function dragElement(elmnt) {
   
   function togglePopup(){
 document.getElementById("popup-1").classList.toggle("active");}</script></body> 
+
 </html> 
