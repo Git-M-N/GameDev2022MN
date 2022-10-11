@@ -1,13 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
 Version @.1.2
 <h2 alignecenter>tia@5-input output by Fred</h2>
 
-<a hrefe"https: //wm.w3schools .com/jsref/prop_html_innerhtml.asp">Good reference to input putput
+<a href="https: //wm.w3schools .com/jsref/prop_html_innerhtml.asp">Good reference to input putput
+
 Javascript innerHTML value by Fred</a>
 
-<h4> Example input output code</ha>
+<h4> Example input output code</h4>
 <pre>
 
-Let myIn@l = document. getElementById('myNum@1' ). value
+let myIn@l = document. getElementById('myNum01' ). value
 
 document .get€lement8yId(‘myDiv01').innerHTML = myIn01 + * squared = * + myIn01*myIno1
 </pre>
@@ -16,21 +20,17 @@ document .get€lement8yId(‘myDiv01').innerHTML = myIn01 + * squared = * + myI
 
  
 
-<input ide"myNume" typesnumber value="4" ><br>
+<input id="myNum01" type=number value="4" ><br>
 
- 
+<input type=button value="myEvent squares" onclick="{
+let myIn01 = parseFloat(document.getElementById('myNum01').value)
+let myAnswer = myIn01 * myIn01
+document.getElementById('myDiv01').innerHTML =
+myIn01 + ' squared = ' + myAnswer
+}"><br>
 
-<input typesbutton value="myEvent squares" onclic!
-Let myIn@l = parseFloat (document . getElementById(‘myNum@1' ). value)
-let myAnswer = myIn@l * myInét
-document . get€lementBy1d( ‘myDivol')innerHTML
-myIn@1 + ' squared = ' + myAnswer
-y<br>
-
- 
-
-<div i
-
-   
-
-‘myDivo1">.. </div>
+<div id="myDiv01">
+...
+</div>
+</body>
+</html>
