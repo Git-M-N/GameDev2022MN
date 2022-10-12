@@ -4,7 +4,7 @@
 Version @.1.2
 <h2 alignecenter>tia@5-input output by Fred</h2>
 
-<a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input output
+<a href="https: //wm.w3schools .com/jsref/prop_html_innerhtml.asp">Good reference to input putput
 
 Javascript innerHTML value by Fred</a>
 
@@ -34,8 +34,14 @@ myIn01 + ' squared = ' + myAnswer
 </div>
 
 
+<p><a id="myAnchor" target="_blank" href="https://rr.noordstar.me/781c3013">Not a Rickroll!</a></p>
+<button onclick="myFunction()">Change the link</button>
+<button onclick="myFunction2()">Go back to the first Link</button>
 
-<div style='transform: scale(0.65); position: relative; top: -100px;'>
+
+
+
+<div style='transform: scale(0.65); position: relative; top: -100px;'><br>
   <h3>Which Grade Will Max get For this Assignment?</h3>
   <p>Find the right One!</p>
   <hr />
@@ -116,6 +122,17 @@ myIn01 + ' squared = ' + myAnswer
       document.getElementById('showanswer1').removeChild(showAnswer1)
     })
   }
+  
+  function myFunction() {
+  const element = document.getElementById("myAnchor");
+  element.innerHTML = "Look how many got rolled";
+  element.href = "https://rr.noordstar.me/data/781c3013";
+}
+function myFunction2() {
+  const element = document.getElementById("myAnchor");
+  element.innerHTML = "Not a Rickroll!";
+  element.href = "https://rr.noordstar.me/781c3013";
+}
 </script>
 </body>
 </html>
