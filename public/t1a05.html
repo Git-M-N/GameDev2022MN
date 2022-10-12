@@ -36,30 +36,30 @@ myIn01 + ' squared = ' + myAnswer
 
 
 <div style='transform: scale(0.65); position: relative; top: -100px;'>
-  <h3>How is the Name of our Teacher?</h3>
-  <p>Choose 1 answer</p>
+  <h3>Which Grade Will Max get For this Assignment?</h3>
+  <p>Find the right One!</p>
   <hr />
 
   <div id='block-11' style='padding: 10px;'>
     <label for='option-11' style=' padding: 5px; font-size: 2.5rem;'>
-      <input type='radio' name='option' value='JeremyEllis' id='option-11' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-      Jeremy Ellis</label>
+      <input type='radio' name='option' value='9/9' id='option-11' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      9/9</label>
     <span id='result-11'></span>
   </div>
   <hr />
 
   <div id='block-12' style='padding: 10px;'>
     <label for='option-12' style=' padding: 5px; font-size: 2.5rem;'>
-      <input type='radio' name='option' value='JackEllise' id='option-12' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-      Jack Ellise</label>
+      <input type='radio' name='option' value='8/9' id='option-12' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      8/9</label>
     <span id='result-12'></span>
   </div>
   <hr />
 
   <div id='block-13' style='padding: 10px;'>
     <label for='option-13' style=' padding: 5px; font-size: 2.5rem;'>
-      <input type='radio' name='option' value='3DPrinter' id='option-13' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-      3D Printer</label>
+      <input type='radio' name='option' value='4/9' id='option-13' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      4/9</label>
     <span id='result-13'></span>
   </div>
   <hr />
@@ -67,7 +67,7 @@ myIn01 + ' squared = ' + myAnswer
   <div id='block-14' style='padding: 10px;'>
     <label for='option-14' style=' padding: 5px; font-size: 2.5rem;'>
       <input type='radio' name='option' value='BarackObama' id='option-14' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-      Barack Obama</label>
+      1/9</label>
     <span id='result-14'></span>
   </div>
   <hr />
@@ -83,9 +83,9 @@ myIn01 + ' squared = ' + myAnswer
       document.getElementById('result-11').innerHTML = 'Correct!'
     }
     if (document.getElementById('option-12').checked) {
-      document.getElementById('block-12').style.border = '3px solid red'
-      document.getElementById('result-12').style.color = 'red'
-      document.getElementById('result-12').innerHTML = 'Incorrect!'
+      document.getElementById('block-12').style.border = '3px solid #cc9900'
+      document.getElementById('result-12').style.color = '#cc9900'
+      document.getElementById('result-12').innerHTML = 'almost correct!'
       
     }
     if (document.getElementById('option-13').checked) {
@@ -95,9 +95,9 @@ myIn01 + ' squared = ' + myAnswer
      
     }
     if (document.getElementById('option-14').checked) {
-      document.getElementById('block-14').style.border = '3px solid red'
-      document.getElementById('result-14').style.color = 'red'
-      document.getElementById('result-14').innerHTML = 'Incorrect!'
+      document.getElementById('block-14').style.border = '3px solid #4d0000'
+      document.getElementById('result-14').style.color = '#4d0000'
+      document.getElementById('result-14').innerHTML = 'No Way you clicked this Mr.Ellis ._.'
  
     }
   }
@@ -119,4 +119,3 @@ myIn01 + ' squared = ' + myAnswer
 </script>
 </body>
 </html>
-
