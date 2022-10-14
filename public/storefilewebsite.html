@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<script>function togglePopup(){
+document.getElementById("popup-1").classList.toggle("active");}</script>
+    <title>
+      Move an element to left, right, 
+      up and down using arrow keys
+    </title>
+    <script src=
+"https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+    <style>
+    
+    maze {
+        width: 1000px;
+        height: 1000px;
+      }
+    
+    
+    .popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background: ;
+  z-index:1;
+  display:none;}
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) scale(0);
+  background-color: #cccccc;
+  width:450px;
+  height:220px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+.popup .close-btn {
+position:absolute;
+right:20px;
+top:20px;
+width:30px;
+height:30px;
+background:#222;
+color:#fff ;
+font-size:25px;
+font-weight:600;
+line-height:30px;
+text-align:center;
+border-radius:50%;
+}
+.popup.active .overlay {
+  display:block;
+}
+.popup.active .content {
+transition:all 300ms ease-in-out;
+transform:translate(-50%, -50%) scale(1);
+}
+</style>
+    <style type="text/css">
+        .box {
+            float: center;
+            background: green;
+            margin: 10px auto 0;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 24px;
+            border: 1px solid #000000;
+            text-align: center;
+            position: relative;
+        }
+    </style>
+</head>
+  
+<body>
+    <center>
+        <h1 style="color:green;">
+        Use Arrows to control Jeremy Ellis
+        </h1> 
+         
+       
+        <script type="text/javascript">
+            $(document).keydown(function(e) {
+                if (e.which == '39') { //Right arrow key
+                    $(".box").finish().animate({
+                        left: "+=50"
+                    });
+                }
+            });
+             $(document).keydown(function(e) {
+                if (e.which == '37') { //left arrow key
+                    $(".box").finish().animate({
+                        left: "-=50"
+                    });
+                }
+            });
+            $(document).keydown(function(e) {
+                if (e.which == '40') { //down arrow key
+                    $(".box").finish().animate({
+                        top: "+=50"
+                    });
+                }
+            });
+            $(document).keydown(function(e) {
+                if (e.which == '38') { //up arrow key
+                    $(".box").finish().animate({
+                        top: "-=50"
+                    });
+                }
+            });
+        </script>
+    </center>
+     <div class="popup" id="popup-1">
+   <div class="overlay"></div>
+   <div class="content">
+     <div class="close-btn" onclick="togglePopup()">&times;
+      <div style="position:relative; height:60px;">
+ <div class="box"><img src="https://th.bing.com/th/id/OIP.JQ-Ir98v1pe18l6G5y4PEwAAAA?pid=ImgDet&rs=1" alt="Flowers in Chania" width="50" height="50"></div>
+</div>
+       </div>
+   </div>
+    </div>
+   
+   <button onclick="togglePopup()">Show Popup</button>
+</body>
+  
+</html>       
