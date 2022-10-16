@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   
 <head>
@@ -33,17 +33,18 @@ document.getElementById("popup-1").classList.toggle("active");}</script>
   top:50%;
   left:50%;
   transform:translate(-50%, -50%) scale(0);
-  background-color: #cccccc;
-  width:450px;
-  height:220px;
+  background-image: url("https://www.clipartmax.com/png/middle/86-860032_maze-clip-art-2d-maze-png.png");
+  width:1000px;
+  height:560px;
   z-index:2;
   text-align:center;
   padding:20px;
   box-sizing:border-box;
+
 }
 .popup .close-btn {
 position:absolute;
-right:20px;
+right:150px;
 top:20px;
 width:30px;
 height:30px;
@@ -68,13 +69,15 @@ transform:translate(-50%, -50%) scale(1);
             float: center;
             background: green;
             margin: 10px auto 0;
-            width: 50px;
-            height: 50px;
+            width: 20px;
+            height: 20px;
+            right:450px;
+            top:-50px;
             color: white;
-            font-size: 24px;
             border: 1px solid #000000;
             text-align: center;
-            position: relative;
+            position:absolute;
+            
         }
     </style>
 </head>
@@ -90,28 +93,28 @@ transform:translate(-50%, -50%) scale(1);
             $(document).keydown(function(e) {
                 if (e.which == '39') { //Right arrow key
                     $(".box").finish().animate({
-                        left: "+=50"
+                        left: "+=15"
                     });
                 }
             });
              $(document).keydown(function(e) {
                 if (e.which == '37') { //left arrow key
                     $(".box").finish().animate({
-                        left: "-=50"
+                        left: "-=15"
                     });
                 }
             });
             $(document).keydown(function(e) {
                 if (e.which == '40') { //down arrow key
                     $(".box").finish().animate({
-                        top: "+=50"
+                        top: "+=15"
                     });
                 }
             });
             $(document).keydown(function(e) {
                 if (e.which == '38') { //up arrow key
                     $(".box").finish().animate({
-                        top: "-=50"
+                        top: "-=15"
                     });
                 }
             });
@@ -122,13 +125,13 @@ transform:translate(-50%, -50%) scale(1);
    <div class="content">
      <div class="close-btn" onclick="togglePopup()">&times;
       <div style="position:relative; height:60px;">
- <div class="box"><img src="https://th.bing.com/th/id/OIP.JQ-Ir98v1pe18l6G5y4PEwAAAA?pid=ImgDet&rs=1" alt="Flowers in Chania" width="50" height="50"></div>
+      <div class="box"><img src="https://th.bing.com/th/id/OIP.JQ-Ir98v1pe18l6G5y4PEwAAAA?pid=ImgDet&rs=1" alt="Flowers in Chania" width="20" height="20"> </div>
 </div>
        </div>
    </div>
     </div>
    
-   <button onclick="togglePopup()">Show Popup</button>
+   <button onclick="togglePopup()">Play Maze Game</button>
 </body>
   
-</html>       
+</html>    
