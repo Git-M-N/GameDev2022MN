@@ -1,44 +1,41 @@
-Version 0.0.1
-<h2 allign=center>t1a06-varaibles-by-Fred.html</h2>
+<html><head></head><body>Version 0.0.1
 
-<a href="">You Fix: Good reference to Variables in Javascript
-Jand other languages</a><br>
+<h2 align="center">t1a06-varaibles-by-Fred.html</h2>
 
-Other Languages use: bool, int, float, char, string,
+<a href="">You Fix: Good reference to Variables in Javascript 
+and other languages</a><br>
+
+Other Languages use: bool, int, float, char, string, 
 int_8, int_16 etc<br>
 
 Note: Javascript does use var and let for local variables.<br>
 For Global variables Mr. Ellis prefers to use document.myVarName
 
-<h4> Example input output code</ha>
 
-<pre>
-let mytn01 = document.getElementById(‘myText01").value
-document .getElementById("myDiv0l").innerHTML = myIn01
-
+<h4> Example input output code</h4>
+<pre>    let myIn01 = document.getElementById('myText01').value
+    document.getElementById('myDiv01').innerHTML = myIn01 
 </pre>
 
- 
+<h4> Example working code</h4>
 
-J<h4> Example working code</h4>
+<input id="myText01" type="text" value="The dog "><br> 
 
- 
+<input type="button" value="Show Variable" onclick="{
+    let myIn01 = document.getElementById('myText01').value
+    document.getElementById('myDiv01').innerHTML = myIn01
 
-|<input id="myText01" type=text value="The dog">
-<input type=button value="Show Variable” onclick="{
-Let mytne1 = document. getElementById('myText01').value
-document. getElementById('myDiv0l').innerHTML = myIno1 }"><br>
+}"><br>
 
-<input type-button value="Using no variable" onclick="{
-document. getElementById(‘myDivel").innerHTML =
-document .getElementById(‘myText0l').value
-yrosbr>|
+<input type="button" value="Using no variable" onclick="{
+   document.getElementById('myDiv01').innerHTML = 
+       document.getElementById('myText01').value
+}"><br>
 
-                                  
-                                  
-                                  
-                                  
-                                  
+<div id="myDiv01">...</div>
+
+
+</body></html>                        
                                   
  <script>
 function Choice(elem) {
