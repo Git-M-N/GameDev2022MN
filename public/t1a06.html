@@ -34,4 +34,40 @@ document. getElementById(‘myDivel").innerHTML =
 document .getElementById(‘myText0l').value
 yrosbr>|
 
-<div
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+ <script>
+function Choice(elem) {
+   var box = document.getElementById("box");
+   if (elem.id == "no") {
+   box.style.backgroundImage = "url('https://previews.123rf.com/images/begun1983/begun19831810/begun1983181000039/109230664-instant-noodles-background-of-instant-egg-noodles-the-texture-of-instant-noodles-.jpg')";
+   } else if (elem.id == "yes") {
+    box.style.backgroundImage = " url('https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000')";
+   } else {
+     box.style.backgroundImage = " url('https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg')";
+   };
+ };
+ </script>
+<div id="box"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<button id="yes" onclick="Choice(this);">Pc Background</button>
+<button id="no" onclick="Choice(this);">Noodles</button>
+<button id="other" onclick="Choice(this);">Red Moon</button>
