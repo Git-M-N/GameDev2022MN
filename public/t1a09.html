@@ -8,6 +8,21 @@ function myExampleFunction(){
 
 }
 
+function myFirstFunction(){
+   let myIn02 = parseInt(document.getElementById('myText02').value)
+   let mySum1 = myIn02 * myIn02
+   let myReply1 =  myIn02 + ' * ' + myIn02 + ' = ' + mySum1
+   return myReply1
+
+}
+
+function myDividation(){
+   let myIn03 = parseInt(document.getElementById('myText03').value)
+   let mySum2 = myIn03 / myIn03
+   let myReply2 =  myIn03 + ' / ' + myIn03 + ' = ' + mySum2
+   return myReply2
+
+}
 </script>
 
 </head><body>Version 0.0.1
@@ -34,4 +49,29 @@ Information can also be passed to functions (that's more advanced).
    document.getElementById('myDiv01').innerHTML =  myExampleFunction()
 }">
 
-<div id="myDiv01">...</div></body></html>
+<div id="myDiv01">...</div>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+
+<input type="text" id="myText02" value="9"><br>
+
+<input type="button" value="Multiplication" onclick="{
+   document.getElementById('myDiv02').innerHTML =  myFirstFunction()
+}">
+
+<div id="myDiv02">...</div>
+
+
+<input type="text" id="myText03" value="20"><br>
+
+<input type="button" value="Dividation" onclick="{
+   document.getElementById('myDiv03').innerHTML =  myDividation()
+}">
+
+<div id="myDiv03">...</div>
+</body></html>
