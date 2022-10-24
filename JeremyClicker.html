@@ -1,0 +1,117 @@
+<script>
+    function update() {
+        document.getElementById('text').value = cookiecount;
+        document.title = cookiecount + " Cookies";
+        
+        document.getElementById('ammountMultiplier').innerHTML = "Multiplier Upgrade x" + (multiplier+1);
+        document.getElementById('ammountMultiplier2').innerHTML = "x" + (multiplier+1);
+        document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 100) + " Cookies";
+        document.getElementById('currentMultiplier').innerHTML = "Your current Multiplier is x" + (multiplier);
+        
+        document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
+        document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Cookies";
+        
+        document.getElementById('ammountFarms').innerHTML = "You Own " + farms + " Farms";
+        document.getElementById('costFarms').innerHTML = ((farms+1) * 15) + " Cookies";
+        
+        document.getElementById('cookiespersecond').innerHTML = "You are gaining " + (((autoClick)+(farms*2))*multiplier) + " Cookies per/s";
+    }
+    
+    var multiplier = 1;
+    var cookiecount = 0;
+    var autoClick = 0;
+    var farms = 0;
+    
+    function timer() {
+        cookiecount = cookiecount + autoClick*multiplier;
+        cookiecount = cookiecount + farms*2*multiplier;
+        update()
+    }
+    setInterval(timer, 1000)
+</script>
+<html>
+<head><title>0 Cookies</title></head>
+<body>
+
+    <p id="cookiespersecond">You are gaining 0 Jeremy Ellis Coins per/s</p>
+    
+    <a href=# onclick="add()"><img src="https://avatars.githubusercontent.com/u/5605614?v=4"></a>
+    <br><br>
+    You got: 
+    <input type="text" id="text" disabled style= text-align:center value=0>
+    <script>
+    function add() {
+        cookiecount = cookiecount + 1
+        update()
+    }
+    </script>
+     Cookies
+    <br><br>
+    
+    <button><a href="#" onClick="save()">Save</a></button>
+    <button><a href="#" onclick="load()">Load</a></button>
+    <br><br>
+    
+    <p id="ammountMultiplier">Multiplier Upgrade x2</p>
+    <button><a href="#" onClick="buyMultiplier()"><span id="ammountMultiplier2">x2</span></a></button>
+    <p id="costMultiplier">200 Jeremy Coins</p>
+    <p id="currentMultiplier">Your current Multiplier is x1</p>
+    <br>
+    
+    <p>Buy 1 Auto Clicker</p>
+    <button><a href="#" onClick="buyAutoClick()"><img src="https://avatars.githubusercontent.com/u/5605614?v=4" width="30px" height="40px"></a></button>
+    <p id="costAutoClick">12 Jeremy Coins</p>
+    <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+    
+    <br>
+    
+    <p>Buy 1 Farm</p>
+    <button><a href="#" onClick="buyFarm()"><img src="farm.png" width="50px" height="50px"></a></button>
+    <p id="costFarms">15 Cookies</p>
+    <p id="ammountFarms">You Own 0 Farms</p>
+    
+    <script>
+    function save() {
+        localStorage.setItem("cookiecount", cookiecount);
+        localStorage.setItem("autoClick", autoClick);
+        localStorage.setItem("farms", farms);
+        localStorage.setItem("multiplier", multiplier);
+    }
+    function load() {
+        cookiecount = localStorage.getItem("cookiecount");
+        cookiecount = parseInt(cookiecount);
+        autoClick = localStorage.getItem("autoClick");
+        autoClick = parseInt(autoClick);
+        farms = localStorage.getItem("farms");
+        farms = parseInt(farms);
+        multiplier = localStorage.getItem("multiplier");
+        multiplier = parseInt(multiplier);        
+        update()
+    }
+        
+    function buyAutoClick() {
+        if (cookiecount >= ((autoClick+1) * 12)) {
+            cookiecount = cookiecount - ((autoClick+1) * 12);
+            autoClick = autoClick + 1;
+            update()
+        }
+    }
+        
+    function buyFarm() {
+        if (cookiecount >= ((farms+1) * 15)) {
+            cookiecount = cookiecount - ((farms+1) * 15);
+            farms = farms + 1;
+            update()
+        }
+    }
+    
+    function buyMultiplier() {
+        if (cookiecount >= ((multiplier+1) * 100)) {
+            cookiecount = cookiecount - ((multiplier+1) * 50);
+            multiplier = multiplier + 1;
+            update()
+        }
+    }
+    </script>
+</body>
+</html>
