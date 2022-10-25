@@ -1,30 +1,30 @@
 <script>
     function update() {
         document.getElementById('text').value = cookiecount;
-        document.title = cookiecount + " Cookies";
+        document.title = cookiecount + " Jeremycoin";
         
         document.getElementById('ammountMultiplier').innerHTML = "Multiplier Upgrade x" + (multiplier+1);
         document.getElementById('ammountMultiplier2').innerHTML = "x" + (multiplier+1);
-        document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 100) + " Cookies";
+        document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 100) + " Jeremycoin";
         document.getElementById('currentMultiplier').innerHTML = "Your current Multiplier is x" + (multiplier);
         
         document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
-        document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Cookies";
+        document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Jeremycoin";
         
-        document.getElementById('ammountFarms').innerHTML = "You Own " + farms + " Farms";
-        document.getElementById('costFarms').innerHTML = ((farms+1) * 15) + " Cookies";
+        document.getElementById('ammountHightechpc').innerHTML = "You Own " + Hightechpc + " Hightechpc";
+        document.getElementById('costHightechpc').innerHTML = ((Hightechpc+1) * 15) + " Jeremycoin";
         
-        document.getElementById('cookiespersecond').innerHTML = "You are gaining " + (((autoClick)+(farms*2))*multiplier) + " Cookies per/s";
+        document.getElementById('Jeremycoinpersecond').innerHTML = "You are gaining " + (((autoClick)+(Hightechpc*2))*multiplier) + " Jeremycoin per/s";
     }
     
     var multiplier = 1;
     var cookiecount = 0;
     var autoClick = 0;
-    var farms = 0;
+    var Hightechpc = 0;
     
     function timer() {
         cookiecount = cookiecount + autoClick*multiplier;
-        cookiecount = cookiecount + farms*2*multiplier;
+        cookiecount = cookiecount + Hightechpc*2*multiplier;
         update()
     }
     setInterval(timer, 1000)
@@ -33,7 +33,7 @@
 <head><title>0 Cookies</title></head>
 <body>
 
-    <p id="cookiespersecond">You are gaining 0 Jeremy Ellis Coins per/s</p>
+    <p id="Jeremycoinpersecond">You are gaining 0 Jeremy Ellis Coins per/s</p>
     
     <a href=# onclick="add()"><img src="https://avatars.githubusercontent.com/u/5605614?v=4"></a>
     <br><br>
@@ -45,7 +45,7 @@
         update()
     }
     </script>
-     Cookies
+     Jeremycoin
     <br><br>
     
     <button><a href="#" onClick="save()">Save</a></button>
@@ -59,22 +59,22 @@
     <br>
     
     <p>Buy 1 Auto Clicker</p>
-    <button><a href="#" onClick="buyAutoClick()"><img src="https://avatars.githubusercontent.com/u/5605614?v=4" width="30px" height="40px"></a></button>
+    <button><a href="#" onClick="buyAutoClick()"><img src="https://hehimhismedia.com/wp-content/uploads/2020/05/Dell-Computer.jpg" width="30px" height="40px"></a></button>
     <p id="costAutoClick">12 Jeremy Coins</p>
     <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
     
     <br>
     
-    <p>Buy 1 Farm</p>
-    <button><a href="#" onClick="buyFarm()"><img src="farm.png" width="50px" height="50px"></a></button>
-    <p id="costFarms">15 Cookies</p>
-    <p id="ammountFarms">You Own 0 Farms</p>
+    <p>Buy 1 Hightechpc</p>
+    <button><a href="#" onClick="buyHightechpc()"><img src="https://c1.neweggimages.com/ProductImageOriginal/83-360-205-13.jpg" width="50px" height="50px"></a></button>
+    <p id="costHightechpc">15 Jeremy Coins</p>
+    <p id="ammountHightechpc">You Own 0 Farms</p>
     
     <script>
     function save() {
         localStorage.setItem("cookiecount", cookiecount);
         localStorage.setItem("autoClick", autoClick);
-        localStorage.setItem("farms", farms);
+        localStorage.setItem("Hightechpc", Hightechpc);
         localStorage.setItem("multiplier", multiplier);
     }
     function load() {
@@ -82,8 +82,8 @@
         cookiecount = parseInt(cookiecount);
         autoClick = localStorage.getItem("autoClick");
         autoClick = parseInt(autoClick);
-        farms = localStorage.getItem("farms");
-        farms = parseInt(farms);
+        Hightechpc = localStorage.getItem("Hightechpc");
+        Hightechpc = parseInt(Hightechpc);
         multiplier = localStorage.getItem("multiplier");
         multiplier = parseInt(multiplier);        
         update()
@@ -97,10 +97,10 @@
         }
     }
         
-    function buyFarm() {
-        if (cookiecount >= ((farms+1) * 15)) {
-            cookiecount = cookiecount - ((farms+1) * 15);
-            farms = farms + 1;
+    function buyHightechpc() {
+        if (cookiecount >= ((Hightechpc+1) * 15)) {
+            cookiecount = cookiecount - ((Hightechpc+1) * 15);
+            Hightechpc = Hightechpc + 1;
             update()
         }
     }
