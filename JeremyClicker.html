@@ -8,29 +8,29 @@
         document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 100) + " Jeremycoin";
         document.getElementById('currentMultiplier').innerHTML = "Your current Multiplier is x" + (multiplier);
         
-        document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
-        document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Jeremycoin";
+        document.getElementById('ammountSchoolpc').innerHTML = "You Own " + Schoolpc + " Schoolpc";
+        document.getElementById('costSchoolpc').innerHTML = ((Schoolpc+1) * 12) + " Jeremycoin";
         
         document.getElementById('ammountHightechpc').innerHTML = "You Own " + Hightechpc + " Hightechpc";
         document.getElementById('costHightechpc').innerHTML = ((Hightechpc+1) * 15) + " Jeremycoin";
         
-        document.getElementById('Jeremycoinpersecond').innerHTML = "You are gaining " + (((autoClick)+(Hightechpc*2))*multiplier) + " Jeremycoin per/s";
+        document.getElementById('Jeremycoinpersecond').innerHTML = "You are gaining " + (((Schoolpc)+(Hightechpc*2))*multiplier) + " Jeremycoin per/s";
     }
     
     var multiplier = 1;
     var cookiecount = 0;
-    var autoClick = 0;
+    var Schoolpc = 0;
     var Hightechpc = 0;
     
     function timer() {
-        cookiecount = cookiecount + autoClick*multiplier;
+        cookiecount = cookiecount + Schoolpc*multiplier;
         cookiecount = cookiecount + Hightechpc*2*multiplier;
         update()
     }
     setInterval(timer, 1000)
 </script>
 <html>
-<head><title>0 Cookies</title></head>
+<head><title>0 Jeremycoin</title></head>
 <body>
 
     <p id="Jeremycoinpersecond">You are gaining 0 Jeremy Ellis Coins per/s</p>
@@ -58,10 +58,10 @@
     <p id="currentMultiplier">Your current Multiplier is x1</p>
     <br>
     
-    <p>Buy 1 Auto Clicker</p>
-    <button><a href="#" onClick="buyAutoClick()"><img src="https://hehimhismedia.com/wp-content/uploads/2020/05/Dell-Computer.jpg" width="30px" height="40px"></a></button>
-    <p id="costAutoClick">12 Jeremy Coins</p>
-    <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+    <p>Buy 1 Schoolpc</p>
+    <button><a href="#" onClick="buySchoolpc()"><img src="https://hehimhismedia.com/wp-content/uploads/2020/05/Dell-Computer.jpg" width="30px" height="40px"></a></button>
+    <p id="costSchoolpc">12 Jeremy Coins</p>
+    <p id="ammountSchoolpc">You Own 0 Schoolpc</p>
     
     <br>
     
@@ -73,15 +73,15 @@
     <script>
     function save() {
         localStorage.setItem("cookiecount", cookiecount);
-        localStorage.setItem("autoClick", autoClick);
+        localStorage.setItem("Schoolpc", autoClick);
         localStorage.setItem("Hightechpc", Hightechpc);
         localStorage.setItem("multiplier", multiplier);
     }
     function load() {
         cookiecount = localStorage.getItem("cookiecount");
         cookiecount = parseInt(cookiecount);
-        autoClick = localStorage.getItem("autoClick");
-        autoClick = parseInt(autoClick);
+        Schoolpc = localStorage.getItem("Schoolpc");
+        Schoolpc = parseInt(autoClick);
         Hightechpc = localStorage.getItem("Hightechpc");
         Hightechpc = parseInt(Hightechpc);
         multiplier = localStorage.getItem("multiplier");
@@ -89,10 +89,10 @@
         update()
     }
         
-    function buyAutoClick() {
-        if (cookiecount >= ((autoClick+1) * 12)) {
-            cookiecount = cookiecount - ((autoClick+1) * 12);
-            autoClick = autoClick + 1;
+    function buySchoolpc() {
+        if (cookiecount >= ((Schoolpc+1) * 12)) {
+            cookiecount = cookiecount - ((Schoolpc+1) * 12);
+            Schoolpc = Schoolpc + 1;
             update()
         }
     }
