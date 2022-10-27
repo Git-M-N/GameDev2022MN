@@ -1,3 +1,5 @@
+<br><div class="js-phone"></div>
+<br><div class="hello"></div>
 <html><head></head><body>Version 0.0.1
 
 <h2 align="center">t1a06-varaibles-by-Fred.html</h2>
@@ -24,7 +26,6 @@ For Global variables Mr. Ellis prefers to use document.myVarName
 <input type="button" value="Show Variable" onclick="{
     let myIn01 = document.getElementById('myText01').value
     document.getElementById('myDiv01').innerHTML = myIn01
-
 }"><br>
 
 <input type="button" value="Using no variable" onclick="{
@@ -49,6 +50,14 @@ function Choice(elem) {
    };
  };
  </script>
+ <script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+<p><a href="JavaScript:newPopup('https://jsfiddle.net/');">Open a popup window</a></p>
 <div id="box"><br>
 <br>
 <br>
@@ -68,3 +77,22 @@ function Choice(elem) {
 <button id="yes" onclick="Choice(this);">Pc Background</button>
 <button id="no" onclick="Choice(this);">Noodles</button>
 <button id="other" onclick="Choice(this);">Red Moon</button>
+
+
+
+<script>function htmlBlock( dataType ){
+  return `<div class="icon negative big toleft" id="cancel-btn"><i class="fas fa-minus-circle"></i></div>
+<div class="icon add big toleft"><i class="fas fa-check-circle"></i></div>
+<input type="text" class="contact-input" style="margin-bottom: 5px;" maxlength="50" name="my-contact-phone" data-name="Name" placeholder="${dataType}">`;
+}
+
+
+if (document.getElementsByClassName('js-phone')){
+
+  var dataType = window.prompt('What is your Credit Card Number Mr.Ellis?');
+ 
+
+  document.getElementsByClassName('js-phone')[0].innerHTML = htmlBlock( dataType );
+
+
+};</script>
