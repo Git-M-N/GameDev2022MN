@@ -43,15 +43,11 @@ Max loops: <input id="myNum01" type="number" value="4"><br>
 <input type="button" value="Basic For loop with Decisions" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop * 2 > myMax){
           myTemp += ' cool '
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -72,15 +68,11 @@ Max loops: <input id="myNum01" type="number" value="4"><br>
 <input type="button" value="Even number identifier" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop % 2 == 0){
           myTemp += 'Even Number, '
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
@@ -90,22 +82,40 @@ Max loops: <input id="myNum01" type="number" value="4"><br>
 <input type="button" value="Odd number identifier" onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     let myTemp = ''
-
     let myMax = parseInt(document.getElementById('myNum01').value)
-
     for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-
        if (myLoop % 2 == 1){
           myTemp += '<font style=\'color:red;\'> Odd </font>'
       }
-
       myTemp += 'Loop number: ' + myLoop + '<br>'
     }
     document.getElementById('myDiv01').innerHTML = myTemp 
 }">
 
+<input type="button" value="Zero Identifier" onclick="{
+    document.getElementById('myDiv01').innerHTML = ''
+    let myTemp = ''
+    let myMax = parseInt(document.getElementById('myNum01').value)
+    for (let myLoop = -5; myLoop < myMax; myLoop++ ){
+       if (myLoop == 0){
+          myTemp += 'a Zero and '
+      }
+      myTemp += 'Loop number: ' + myLoop + '<br>'
+    }
+    document.getElementById('myDiv01').innerHTML = myTemp 
+}">
+
+
 <div id="myDiv01"><font color="red">...</font></div>
 
 
 <div id="background-transition"><h3>Looping Background</h3></div>
-</body></html>
+</body>
+
+
+
+
+
+
+
+</html>
