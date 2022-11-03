@@ -1,4 +1,25 @@
-<html><head></head><body>Version 0.0.1
+<html><head>
+  <style>
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite;
+}</style>
+
+</head><body>Version 0.0.1
 <h2 align="center">t2a03-Classes-by-Fred.html</h2>
 
 <a href="">Find a good reference to Javascript Classes</a><br>
@@ -20,7 +41,7 @@ that work on the variables (called Methods)
 </pre>
 
 <h4> Example working Classes code</h4>
-Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
+Nothing: <input type="text" id="myText01" value="Useless at the moment" ><br>
 <input type="button" value="Example Class Set and Show Class Animal" onclick="{
  class myAnimal {
     constructor(passName, passAge) {
@@ -33,11 +54,14 @@ Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
  }  // end class myAnimal
    myDog = new myAnimal('Snickers', 5)
    myDog.myShow()  
-
 }">
 
 <div id="myDiv01">...</div>
 
+<h2>
+This is still loading...
+</h2>
+<div class="donut"></div>
 
 
 
