@@ -1,4 +1,72 @@
-<html><head></head><body>Version 0.0.1
+<html><head>
+     <script>function togglePopup(){
+document.getElementById("popup-1").classList.toggle("active");}</script>
+<style>
+
+
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;}
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) scale(0);
+  background:white ;
+  width:450px;
+  height:220px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+.popup .close-btn {
+position:absolute;
+right:20px;
+top:20px;
+width:30px;
+height:30px;
+background:#222;
+color:#fff ;
+font-size:25px;
+font-weight:600;
+line-height:30px;
+text-align:center;
+border-radius:50%;
+}
+.popup.active .overlay {
+  display:block;
+}
+.popup.active .content {
+transition:all 300ms ease-in-out;
+transform:translate(-50%, -50%) scale(1);
+}
+
+</style>
+<style>
+        .box {
+            float: center;
+            background: green;
+            margin: 10px auto 0;
+            width: 20px;
+            height: 20px;
+            right:450px;
+            top:1400px;
+            color: white;
+            border: 1px solid #000000;
+            text-align: center;
+            position:absolute;
+            
+        }
+    </style>
+
+ </head><body style="background-color:#749f54;">Version 0.0.1
 
 <h2 align="center">t2a02-objects-by-Fred.html</h2>
 
@@ -28,7 +96,7 @@ Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
     'lastName'  : 'Doe',
     'age'       :  50,
     'eyeColor'  : 'blue'
-  } 
+  }
 
    document.getElementById('myDiv01').innerHTML = '<br>myPerson Object has properties: <br>'
    document.getElementById('myDiv01').innerHTML += 'firstName: ' + myPerson.firstName + '<br>'
@@ -39,14 +107,65 @@ Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
 <div id="myDiv01">...</div>
 
 
+<h1>
+With Ojects you can do:
+</h1>
 <br>
+<h2>
+Images:
+</h2>
+<object data="https://i0.wp.com/wallpapershero.com/wp-content/uploads/sites/13/2014/11/Cat-Sad-Annoyed.jpg?fit=2560%2C1600&ssl=1" width="300" height="200"></object>
+<br>
+<br>
+<h2>
+Videos:
+</h2>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <div class="popup" id="popup-1">
+   <div class="overlay"></div>
+   <div class="content"> Like this
+     <div class="close-btn" onclick="togglePopup()">&times;
+      <div style="position:relative; height:60px;">
 
+</div>
+       </div>
+   </div>
+   <br>
+   <br>
+   <h2>
+   Popups:
+   </h2>
+   <button onclick="togglePopup()">Show Popup</button>
+<br>
+<br>
+<br>
+<div class="box"> </div>
+<h2>
+Cubes:
+</h2>
+<br>
+<br>
+<br>
+ <script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+<h2>
+Another Website:
+</h2>
+<p><a href="JavaScript:newPopup('https://git-m-n.github.io/GameDev2022MN/public/');">Open a popup window</a></p>
+<br>
+<br><h2>
+and much more
+</h2>
+<br>
+<br>
+<h2>
+an Object is generaly a container for an external resource
+</h2>
 
-
-
-<h1>The object element</h1>
-
-<object data="index.html" width="500" height="200">
-</object>
- 
 </body></html>
