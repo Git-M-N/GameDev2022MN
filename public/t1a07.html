@@ -39,7 +39,7 @@ if (myHour &lt; 18) {
     } else {
         document.getElementById('myDiv01').innerHTML = myIn01 + ' is not complex'}
 }">
-
+<div id="myDiv01">...</div>
 
 <h4> How big are you? write 1.78 for 1.78m as example</h4>
 
@@ -51,13 +51,13 @@ if (myHour &lt; 18) {
 <input type="button" value="Are you big or small" onclick="{
     let myIn01 = parseFloat(document.getElementById('myHeight01').value)
     if (myIn01 <= 1.5){
-        document.getElementById('myDiv01').innerHTML = myIn01 + ' You are pretty small'
+        document.getElementById('myDiv02').innerHTML = myIn01 + ' You are pretty small'
     } else {
-        document.getElementById('myDiv01').innerHTML = myIn01 + ' You are pretty Big'}
+        document.getElementById('myDiv02').innerHTML = myIn01 + ' You are pretty Big'}
 }">
 
 
-<div id="myDiv01">...</div>
+<div id="myDiv02">...</div>
   
   <label for="weather">How much is which Crypto Currency? </label>
 <select id="weather">
