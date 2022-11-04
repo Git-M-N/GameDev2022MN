@@ -40,5 +40,151 @@ Max Array Entry: <input type="text" id="myText01" value="3"><br>
 <br>
 
 You do at least 7 other arrays:<br>
+ <html><head><script>
+
+    function update() {
+        document.getElementById('text').value = cookiecount;
+        document.title = cookiecount + " Jeremycoin";
+        
+        document.getElementById('ammountMultiplier').innerHTML = "Multiplier Upgrade x" + (multiplier+1);
+        document.getElementById('ammountMultiplier2').innerHTML = "x" + (multiplier+1);
+        document.getElementById('costMultiplier').innerHTML = ((multiplier+1) * 1500) + " Jeremycoin";
+        document.getElementById('currentMultiplier').innerHTML = "Your current Multiplier is x" + (multiplier);
+        
+        document.getElementById('ammountSchoolpc').innerHTML = "You Own " + Schoolpc + " Schoolpc";
+        document.getElementById('costSchoolpc').innerHTML = ((Schoolpc+1) * 12) + " Jeremycoin";
+        
+        document.getElementById('ammountHightechpc').innerHTML = "You Own " + Hightechpc + " Hightechpc";
+        document.getElementById('costHightechpc').innerHTML = ((Hightechpc+1) * 200) + " Jeremycoin";
+        
+         document.getElementById('ammountGodlikepc').innerHTML = "You Own " + Godlikepc + " Godlikepc";
+        document.getElementById('costGodlikepc').innerHTML = ((Godlikepc+1) * 700) + " Jeremycoin";
+        
+        document.getElementById('Jeremycoinpersecond').innerHTML = "You are gaining " + (((Schoolpc)+(Hightechpc*3)+(Godlikepc*5))*multiplier) + " Jeremycoin per/s";
+    }
+    
+    var multiplier = 1;
+    var cookiecount = 0;
+    var Schoolpc = 0;
+    var Hightechpc = 0;
+    var Godlikepc = 0;
+    
+    function timer() {
+        cookiecount = cookiecount + Schoolpc*multiplier;
+        cookiecount = cookiecount + Hightechpc*3*multiplier;
+        cookiecount = cookiecount + Godlikepc*5*multiplier;
+        update()
+    }
+    setInterval(timer, 1000)
+</script>
+
+<title>0 Jeremycoin</title></head>
+<body>
+
+    <p id="Jeremycoinpersecond">You are gaining 0 Jeremycoin per/s</p>
+    
+    <a href="#" onclick="add()"><img src="https://avatars.githubusercontent.com/u/5605614?v=4"></a>
+    <br><br>
+    You got: 
+    <input type="text" id="text" disabled="" style="text-align:center" value="0">
+    <script>
+    function add() {
+        cookiecount = cookiecount + 1
+        update()
+    }
+    </script>
+     Jeremycoin
+    <br><br>
+    
+    <button><a href="#" onclick="save()">Save</a></button>
+    <button><a href="#" onclick="load()">Load</a></button>
+    <br><br>
+    
+    <p id="ammountMultiplier">Multiplier Upgrade x2</p>
+    <button><a href="#" onclick="buyMultiplier()"><span id="ammountMultiplier2">x2</span></a></button>
+    <p id="costMultiplier">3000 Jeremycoin</p>
+    <p id="currentMultiplier">Your current Multiplier is x1</p>
+    <br>
+    
+    <p>Buy 1 Schoolpc</p>
+    <button><a href="#" onclick="buySchoolpc()"><img src="https://hehimhismedia.com/wp-content/uploads/2020/05/Dell-Computer.jpg" width="30px" height="40px"></a></button>
+    <p id="costSchoolpc">12 Jeremycoin</p>
+    <p id="ammountSchoolpc">You Own 0 Schoolpc</p>
+    
+    <br>
+    
+    <p>Buy 1 Hightechpc</p>
+    <button><a href="#" onclick="buyHightechpc()"><img src="https://evatech.com.au/news/wp-content/uploads/2016/08/DSC_1910.jpg" width="50px" height="50px"></a></button>
+    <p id="costHightechpc">200 Jeremycoin</p>
+    <p id="ammountHightechpc">You Own 0 Hightechpc</p>
+    <br>
+    
+        <p>Buy 1 Godlikepc</p>
+    <button><a href="#" onclick="buyGodlikepc()"><img src="https://c1.neweggimages.com/ProductImageOriginal/83-360-205-13.jpg" width="50px" height="40px"></a></button>
+    <p id="costGodlikepc">700 Jeremycoin</p>
+    <p id="ammountGodlikepc">You Own 0 Godlikepc</p>
+    
+    <br>
+    
+    <script>
+    function save() {
+        localStorage.setItem("cookiecount", cookiecount);
+        localStorage.setItem("Schoolpc", autoClick);
+        localStorage.setItem("Hightechpc", Hightechpc);
+        localStorage.setItem("Godlikepc", Godlikepc);
+        localStorage.setItem("multiplier", multiplier);
+    }
+    function load() {
+        cookiecount = localStorage.getItem("cookiecount");
+        cookiecount = parseInt(cookiecount);
+        Schoolpc = localStorage.getItem("Schoolpc");
+        Schoolpc = parseInt(autoClick);
+        Hightechpc = localStorage.getItem("Hightechpc");
+        Hightechpc = parseInt(Hightechpc);
+        Hightechpc = localStorage.getItem("Godlikepc");
+        Hightechpc = parseInt(Godlikepc);
+        multiplier = localStorage.getItem("multiplier");
+        multiplier = parseInt(multiplier);        
+        update()
+    }
+        
+    function buySchoolpc() {
+        if (cookiecount >= ((Schoolpc+1) * 12)) {
+            cookiecount = cookiecount - ((Schoolpc+1) * 12);
+            Schoolpc = Schoolpc + 1;
+            update()
+        }
+    }
+        
+    function buyHightechpc() {
+        if (cookiecount >= ((Hightechpc+1) * 200)) {
+            cookiecount = cookiecount - ((Hightechpc+1) * 200);
+            Hightechpc = Hightechpc + 1;
+            update()
+        }
+    }
+    
+    
+        function buyGodlikepc() {
+        if (cookiecount >= ((Godlikepc+1) * 700)) {
+            cookiecount = cookiecount - ((Godlikepc+1) * 700);
+            Godlikepc = Godlikepc + 1;
+            update()
+        }
+    }
+    
+    
+    function buyMultiplier() {
+        if (cookiecount >= ((multiplier+1) * 10)) {
+            cookiecount = cookiecount - ((multiplier+1) * 1500);
+            multiplier = multiplier + 1;
+            update()
+        }
+    }
+    </script>
+
+
+</body></html>
+
 
 </body></html>
