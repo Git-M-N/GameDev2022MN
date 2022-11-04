@@ -1,4 +1,24 @@
-<html><head>
+<html><head><style>
+#aaa {
+  position:relative;
+  height:100px;
+  width:100px;
+  margin:0 auto;
+  list-style-type: none;
+}
+
+#aaa img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#aaa img.top:hover {
+  opacity:0;
+}</style>
   <style>
 @keyframes donut-spin {
   0% {
@@ -19,7 +39,7 @@
   animation: donut-spin 1.2s linear infinite;
 }</style>
 
-</head><body>Version 0.0.1
+</head><body style="background-color:#838996;">Version 0.0.1
 <h2 align="center">t2a03-Classes-by-Fred.html</h2>
 
 <a href="">Find a good reference to Javascript Classes</a><br>
@@ -62,8 +82,16 @@ Nothing: <input type="text" id="myText01" value="Useless at the moment" ><br>
 This is still loading...
 </h2>
 <div class="donut"></div>
-
-
+<br>
+<br><h2>
+Hover over the hamster
+</h2>
+<ul>
+    <li id="aaa">
+      <img class="bottom" src="https://yt3.ggpht.com/a/AATXAJz29nTiDixhjXUueq75_oHMpSWqDfrSN-MvPQ=s900-c-k-c0xffffffff-no-rj-mo" style="width:300px;height:300px;right:500px">
+      <img class="top" src="https://sadanduseless.b-cdn.net/wp-content/uploads/2019/05/hamsters-eating9.jpg" style="width:300px;height:300px;right:500px">
+    </li>
+</ul>
 
 
 </body></html>
