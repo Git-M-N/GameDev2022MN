@@ -61,7 +61,21 @@ that work on the variables (called Methods)
 </pre>
 
 <h4> Example working Classes code</h4>
-Nothing: <input type="text" id="myText01" value="Useless at the moment" ><br>
+<input type="button" value="Example Mr.Ellis" onclick="{
+ class myAnimal {
+    constructor(passName, passAge) {
+       this.myName = passName;
+       this.myAge = passAge;
+    }
+    myShow(){    
+       document.getElementById('myDiv02').innerHTML = 'Hello '+ this.myName + ' give me ' + this.myAge + ' out of 9<br>'
+    }
+ }  // end class myAnimal
+   myDog = new myAnimal('Mr.Ellis', 9)
+   myDog.myShow()  
+}">
+
+<div id="myDiv02">...</div>
 <input type="button" value="Example Class Set and Show Class Animal" onclick="{
  class myAnimal {
     constructor(passName, passAge) {
