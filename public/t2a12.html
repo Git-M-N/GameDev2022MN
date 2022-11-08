@@ -1,0 +1,48 @@
+<html><head></head><body>
+
+<div class="container-fluid">
+    <header>
+        <h1>Work per hour thing</h1>
+    </header>
+<table border=1>
+  <tr><td>
+  Salary</td><td> <input type="text" name="number1" id="number1" value="15"></td></tr>
+  <tr><td>Work</td><td> <input type="text" name="number2" id="number2" value="8"></td></tr>
+  <tr><td>Tax</td><td> <input type="text" name="number3" id="number3" value="30"><br>
+    </td></tr>
+</table><br>
+    
+   
+    <button type="button" class="btn btn-info" onclick="submit1()">submit</button><br><br>
+     <table border=1>
+          <tr><td>Monthly</td><td> <div class="screen" id="screen1"></div></td></tr>
+          <tr><td>Monthly</td><td> <div class="screen" id="screen2"></div></td></tr>
+          <tr><td>Monthly</td><td> <div class="screen" id="screen3"></div></td></tr>
+    </table>
+
+
+
+    <div class="screen" id="screen3"></div>
+
+
+</div> 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+
+});
+function submit1(){
+    var a =  document.getElementById("number1").value;
+    var b =  document.getElementById("number2").value;
+    var c =  document.getElementById("number3").value;
+    var d = (parseInt(a) * parseInt(b)) / (parseInt(c) / 21);
+    document.getElementById("screen1").innerHTML= 'Your salary is: ' + d + 'CAD';
+    var e = (parseInt(d) * 30);
+    document.getElementById("screen2").innerHTML= 'Your monthly salary (30 days) is: ' + e + 'CAD';
+    var f = (parseInt(d) * 365);
+     document.getElementById("screen3").innerHTML= 'Your yearly salary (365 days) is: ' + f + 'CAD';
+  }
+</script>
+</body></html>
