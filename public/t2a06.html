@@ -30,6 +30,18 @@
    document.getElementById('myArea02').value = myString.join('')
 }"><br><br>
 
+<input type="button" value="binary" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'h') {myTemp  = '01100001 01101000'} 
+      if (myString[myLoop] == 'e') {myTemp  = '01101000 01100101'}
+      if (myString[myLoop] == 'l') {myTemp  = ''}
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea03').value = myString.join('')
+}"><br><br>
 
 <textarea id="myArea03" rows="4" cols="70"></textarea><br> 
 </body></html>
