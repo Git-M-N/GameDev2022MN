@@ -1,9 +1,90 @@
-<html><head><script>
+<html><head><style>
+.outer {
+  width:400px; 
+  border:1px solid #000;
+}
+
+.inner{
+  background-color:#FFFF00;
+  border:5px solid #000;
+  margin:25px;
+  padding:25px
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button1 {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #990000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button1:hover {background-color: #800000}
+
+.button1:active {
+  background-color: #800000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button2 {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1a1aff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button2:hover {background-color: #0000cc}
+
+.button2:active {
+  background-color: #0000cc;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style><script>
 
  class myAnimal {
-    constructor(passName, passAge) {
+    constructor(passName, passAge, passSize) {
        this.myName = passName;
        this.myAge = passAge;
+       this.mySize = passSize;
     }
     myShow(){    
        document.getElementById('myDiv01').innerHTML = 'Hello '+ this.myName+'<br>'
@@ -30,18 +111,16 @@ Extending a pre-existing Class<br>
 
 <h4> Example working Classes code</h4>
 
-<input type="button" value="Example Class Set and Show Class Animal" onclick="{
-
+<input class="button1" type="button" value="Example Class Set and Show Class Animal" onclick="{
   myDog = new myAnimal('Snickers', 5)
   myDog.myShow()  
-
 }">
 
 <h4> Example extending Class code</h4>
-Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
+<br>
+<br>
 
-<input type="button" value="Example Extend Class Animal" onclick="{
-
+<input class="button" type="button" value="Example Extend Class Animal" onclick="{
  class myCat extends myAnimal {                                                                      
      myShow(){
        document.getElementById('myDiv01').innerHTML = this.myName + ' is a great cat<br>'
@@ -50,10 +129,22 @@ Nothing: <input type="text" id="myText01" value="Useless at the moment"><br>
                                                                                                                                                                                                                                                                                                                                     
    myPet = new myCat('Fluffy', 14)
    myPet.myShow()  
+}">
+<br>
+<br>
 
+<input class="button2" type="button" value="Second Extend Class Animal" onclick="{
+ class myCat extends myAnimal {                                                                      
+     myShow(){
+       document.getElementById('myDiv01').innerHTML = this.myName + ' is a great cat. ' + 'He is: ' + this.mySize + '<br>'
+    }                                                                   
+}    // end extended class myCat
+                                                                                                                                                                                                                                                                                                                                    
+   myPet = new myCat('Fluffy', 14,'5ft3')
+   myPet.myShow()  
 }">
 
-<div id="myDiv01">...</div>
+<div class="inner" id="myDiv01">...</div>
 
 
 
