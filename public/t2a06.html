@@ -1,8 +1,8 @@
-<h1 align=center>t2a06-spy-name.html</h1>
-<textarea id="myArea01" rows=4 cols=70>Hello how are you</textarea><br> 
+<html><head></head><body><h1 align="center">t2a06-spy-name.html</h1>
+<textarea id="myArea01" rows="4" cols="70">Hello how are you</textarea><br> 
 
 
-<input type=button value="encrypt" onclick="{
+<input type="button" value="encrypt" onclick="{
    let myTemp = ''
    myString = document.getElementById('myArea01').value.toLowerCase().split('')
    for (let myLoop=0;   myLoop < myString.length; myLoop++){
@@ -16,11 +16,20 @@
 
 
 
-<textarea id="myArea02" rows=4 cols=70></textarea><br> 
+<textarea id="myArea02" rows="4" cols="70"></textarea><br> 
 
-<input type=button value="decrypt" onclick="{
-   alert('Sorry, you have to do this!')
+<input type="button" value="decrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'f') {myTemp  = 'e'} 
+      if (myString[myLoop] == 'i') {myTemp  = 'h'} 
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea02').value = myString.join('')
 }"><br><br>
 
 
-<textarea id="myArea03" rows=4 cols=70></textarea><br> 
+<textarea id="myArea03" rows="4" cols="70"></textarea><br> 
+</body></html>
