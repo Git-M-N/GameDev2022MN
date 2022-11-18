@@ -113,7 +113,7 @@
 }"><br><br>
 <input class="button1" type="button" value="decrypt binary" onclick="{
    let myTemp = ''
-   myString = document.getElementById('myArea03').value.toLowerCase().split('')
+   myString =  document.getElementById('myArea03').value.toLowerCase().split('')
    for (let myLoop=0;   myLoop < myString.length; myLoop++){
       myTemp = myString[myLoop]
       if (myString[myLoop] == '01100001') {myTemp  = 'a'}
@@ -147,6 +147,6 @@
    document.getElementById('myArea04').value = myString.join('')
 }"><br><br>
 
-<textarea id="myArea03" rows="4" cols="70">Write something here</textarea><br> 
-<textarea id="myArea04" rows="4" cols="70">Write something here</textarea><br> 
+<textarea id="myArea03" rows="4" cols="70">a</textarea><br> 
+<textarea id="myArea04" rows="4" cols="70"></textarea><br> 
 </body></html>
