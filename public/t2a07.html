@@ -7,7 +7,7 @@
 
 <input id="myButton01" type=button value="background move left" onclick="{
   myTemp = '100px 0px'
-  myGlobalX -= 5
+  myGlobalX -= 50
   myTemp =  myGlobalX + 'px 0px'
   document.getElementById('myBody').style.backgroundPosition =myTemp
 }">
@@ -16,12 +16,12 @@
   clearInterval(myClock)
   myClock = setInterval(function(){
      document.getElementById('myButton01').click() 
-  }, 100)
+  }, 1000)
     
 }">
 
 <input type=button value="Image Right" onclick="{
-  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 50 + 'px'
 }"><br><br>
 
 <img id="myImage01" style="position:relative; width:100px; height:80px; top:0px; left:0px;" src="myImage01.jpg">
