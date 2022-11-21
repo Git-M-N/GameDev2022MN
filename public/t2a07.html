@@ -22,6 +22,20 @@
 
 <input type=button value="Image Right" onclick="{
   document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 50 + 'px'
-}"><br><br>
+}">
+
+<input type=button value="Image Left" onclick="{
+  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 50 + 'px'
+}">
+<input type=button value="Image up" onclick="{
+  document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 50 + 'px'
+}">
+<input type=button value="Image down" onclick="{
+  document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px'
+}">
+<input type=button value="Make the Image disappear forever" onclick="{
+  document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) -50 + '10px'
+}">
+
 
 <img id="myImage01" style="position:relative; width:100px; height:80px; top:0px; left:0px;" src="myImage01.jpg">
