@@ -1,0 +1,40 @@
+<html><head></head><body onload="{
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      document.getElementById('myText1').value = myStorage 
+    }
+}" onunload="{
+   localstorage.setItem('myStoredText',document.getElementById('myText1').value)
+}"><h2>t2a09-local-storage-name by Fred. Instructions:</h2>
+
+
+
+   
+example: <input id="myText1" type="text" size="70" value="" placeholder="Write here to store"><br>
+
+<input type="button" value="Store Text" onclick="{
+   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+   alert(document.getElementById('myText1').value + ' \nHas been stored')
+   document.getElementById('myText1').value = ''
+}">
+
+<input type="button" value="Retrieve Text" onclick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+ <h1 id="2ndid">...</h1>
+
+       <input type="text" id="firstid">
+       <button onclick="myFunction()">Store Text</button>
+       <button onclick="myFunction2()">Use Stored text</button>  
+
+       <script type="text/javascript">
+           var siteName;
+           function myFunction() {
+           siteName= document.getElementById('firstid').value;
+               localStorage.setItem('store1', siteName);
+           }
+           function myFunction2() {
+               document.getElementById("2ndid").innerHTML = siteName;
+           }
+       </script>
