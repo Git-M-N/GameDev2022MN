@@ -31,7 +31,8 @@
 }
 
 #block{
-    background-color: blue;
+    background-image: url(https://cranmer-grass.com/wp-content/uploads/2019/01/grass-275986_960_720-500x500.jpg);
+    background-size: relative;
     width: 20px;
     height: 20px;
     position: relative;
@@ -75,7 +76,7 @@ var checkDead = setInterval(function() {
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if(blockLeft<20 && blockLeft>-20 && characterTop>=130){
         block.style.animation = "none";
-        alert("Game Over. score: "+Math.floor(counter/100));
+        counter=("Game Over. score: "+Math.floor(counter/100));
         counter=0;
         block.style.animation = "block 1s infinite linear";
     }else{
