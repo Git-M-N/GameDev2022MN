@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" onclick="jump()">
-<head>
+<html lang="en" onclick="jump()"><head>
 <style>
 *{
     padding: 0;
@@ -8,6 +6,7 @@
     overflow-x: hidden;
 }
 .game{
+  background-image: url(https://cranmer-grass.com/wp-content/uploads/2019/01/grass-275986_960_720-500x500.jpg);
     width: 500px;
     height: 200px;
     border: 1px solid black;
@@ -19,6 +18,7 @@
     background-color: red;
     position:relative;
     top: 150px;
+    left: 10px;
 }
 .animate{
     animation: jump 0.3s linear;
@@ -31,8 +31,7 @@
 }
 
 #block{
-    background-image: url(https://cranmer-grass.com/wp-content/uploads/2019/01/grass-275986_960_720-500x500.jpg);
-    background-size: relative;
+    background-color: green;
     width: 20px;
     height: 20px;
     position: relative;
@@ -53,13 +52,13 @@ p{
 </head>
 <body>
     <div class="game">
-        <div id="character"></div>
-        <div id="block"></div>
+        <div id="character" class=""></div>
+        <div id="block" style="animation: 1s linear 0s infinite normal none running block;"></div>
     </div>
-    <p>Score: <span id="scoreSpan"></span></p>
-</body>
+    <p>Score: <span id="scoreSpan">0</span></p>
+
 <script src="script.js"></script>
-</html>
+
 <script>
 var character = document.getElementById("character");
 var block = document.getElementById("block");
@@ -84,3 +83,4 @@ var checkDead = setInterval(function() {
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
 }, 10);</script>
+</body></html>
