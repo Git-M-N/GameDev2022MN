@@ -62,15 +62,15 @@ function submit1(){
     
     var d = (parseInt(a) * parseInt(b)) / (parseInt(c) / 21);
     document.getElementById("screen1").innerHTML= 'Your daily taxed salary is: ' + d + 'CAD';
-    var e = (parseInt(d) * 30);
-    document.getElementById("screen2").innerHTML= 'Your monthly taxed salary (30 days) is: ' + e + 'CAD';
-    var f = (parseInt(d) * 365);
-     document.getElementById("screen3").innerHTML= 'Your yearly taxed salary (365 days) is: ' + f + 'CAD';
+    var e = (parseInt(d) * 20);
+    document.getElementById("screen2").innerHTML= 'Your monthly taxed salary (20 days) is: ' + e + 'CAD';
+    var f = (parseInt(d) * 240);
+     document.getElementById("screen3").innerHTML= 'Your yearly taxed salary (240 days) is: ' + f + 'CAD';
      var g = (parseInt(a) * parseInt(b));
-    document.getElementById("screen4").innerHTML= 'Your daily untaxed salary (30 days) is: ' + g + 'CAD';
-    var i = (parseInt(a) * parseInt(b) * 365);
-    document.getElementById("screen6").innerHTML= 'Your daily untaxed salary (30 days) is: ' + i + 'CAD';
-    var h = (parseInt(a) * parseInt(b) * 30);
+    document.getElementById("screen4").innerHTML= 'Your daily untaxed salary is: ' + g + 'CAD';
+    var i = (parseInt(a) * parseInt(b) * 240);
+    document.getElementById("screen6").innerHTML= 'Your yearly untaxed salary (240 days) is: ' + i + 'CAD';
+    var h = (parseInt(a) * parseInt(b) * 20);
     document.getElementById("screen5").innerHTML= 'Your monthly untaxed salary (30 days) is: ' + h + 'CAD';
   }
 </script>
