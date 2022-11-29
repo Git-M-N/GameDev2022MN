@@ -1,4 +1,82 @@
-<html><head></head><body onload="{
+<html><head><style>
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+body {
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color:#BCAAA4;
+}
+
+
+
+</style></head><body onload="{
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
@@ -24,9 +102,12 @@ example: <input id="myText1" type="text" size="70" value="" placeholder="Write h
 
  <h1 id="2ndid">...</h1>
 
-       <input type="text" id="firstid">
+       <input class="input" type="text" id="firstid">
        <button onclick="myFunction()">Store Text</button>
        <button onclick="myFunction2()">Use Stored text</button>  
+       
+       <input type="file" id="image-input" />
+    <img id="image-container" />
 
        <script type="text/javascript">
            var siteName;
@@ -37,4 +118,32 @@ example: <input id="myText1" type="text" size="70" value="" placeholder="Write h
            function myFunction2() {
                document.getElementById("2ndid").innerHTML = siteName;
            }
+           
+           
+           (function(){
+          /** @type {Node} */
+      var imgInput = document.getElementById( "image-input" ),
+          /** @type {Node} */
+          imgContainer = document.getElementById( "image-container" ),
+          /** Restore image src from local storage */
+          updateUi = function() {
+            imgContainer.src = window.localStorage.getItem( "image-base64" );
+          },
+          /** Register event listeners */
+          bindUi = function(){
+            imgInput.addEventListener( "change", function(){
+              if ( this.files.length ) {
+                var reader = new FileReader();
+                reader.onload = function( e ){
+                  window.localStorage.setItem( "image-base64", e.target.result );
+                  updateUi();
+                };
+                reader.readAsDataURL( this.files[ 0 ] );
+              }
+            }, false );
+          };
+
+    updateUi();
+    bindUi();
+    }());
        </script>
