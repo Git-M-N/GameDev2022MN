@@ -1,12 +1,21 @@
-<html><head><script> let mySound1 = new Audio('windows.mp3') </script>
+<html><head><script> let mySound1 = new Audio('windows.mp3') 
+let mySound2 = new Audio('windowsloud.mp3') </script>
  
 
 
 </head><body><h1 align="center">T3A12-Sounds-and-events-name.html</h1>
 
 
-<input type="button" value="sound" onclick="{
+<input type="button" value="windows" onclick="{
     mySound1.play()
-
 }">
+<input type="button" value="Windowsloud" onclick="{
+    mySound2.play()
+}">
+ <br>
+ <audio controls loop>
+        <source src=
+"windowsloud.mp3"
+        type="audio/mp3">
+    </audio>
 </body></html>
