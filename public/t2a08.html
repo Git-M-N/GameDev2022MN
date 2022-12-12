@@ -68,3 +68,56 @@ You use loops and variables to make fast fancy drawings <br><br>
 </script>
 
 </body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Paintbrush Game</title>
+<style>
+    #canvas {
+    	border: 1px solid black;
+    	width: 1280px;
+    	height: 720px;
+    }
+</style>
+</head>
+<body>
+<h3>Canvas Painter</h3>
+<div>
+	<canvas id="canvas" width="1280" height="720"></canvas>
+</div>
+<div>
+	<button onclick="reset()">Reset Canvas</button>
+</div>
+<script>
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+	var painting = false;
+
+	function startPosition(e){
+		painting = true;
+		draw(e);
+	}
+
+	function finishedPosition(){
+		painting = false;
+		ctx.beginPath();
+	}
+
+	function draw(e){
+		if (!painting) return;
+		ctx.fillStyle = "black";
+		ctx.fillRect(e.clientX, e.clientY, 10, 10);
+		ctx.fill();
+	}
+
+	canvas.addEventListener("mousedown", startPosition);
+	canvas.addEventListener("mouseup", finishedPosition);
+	canvas.addEventListener("mousemove", draw);
+
+	function reset(){
+		ctx.clearRect(0, 0, 1280, 720);
+	}
+</script>
+</body>
+</html>
