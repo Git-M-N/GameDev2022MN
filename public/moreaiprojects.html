@@ -124,123 +124,7 @@ Write a game in HTML about a blue dot, that gets chased by a slower red dot whic
   <canvas id="canvas"></canvas>
 </body>
 </html>
-Write a code in HTML with a random generated Maze with black walls in a canvas that has an blue exit and a red square that is in the canvas that has an artificial intelligence that learns how to control the red square and learns how to escape the Maze. If the red dot touches the exit the Maze reset the game. The red square also can destroy a black wall every 3 seconds and move in all directions every second. It also cant move onto a position it already been.
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
-</style>
-</head>
-<body>
-
-<canvas id="myCanvas" width="400" height="400">
-    Your browser does not support the HTML5 canvas tag.
-</canvas>
-
-<script>
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-
-// Create a random Maze with black walls
-var wallWidth = 10;
-var x = 0;
-var y = 0;
-function drawMaze(){
-	ctx.fillStyle = "black";
-	ctx.fillRect(x,y,wallWidth,wallWidth);
-	x+=wallWidth;
-	if(x > canvas.width - wallWidth){
-		x = 0;
-		y+=wallWidth;
-	}
-	if(y > canvas.height - wallWidth){
-		y = 0;
-	}
-	if(y < canvas.height - wallWidth){
-		setTimeout(drawMaze,5);
-	}
-}
-drawMaze();
-
-// Create a red square
-var squareX = 0;
-var squareY = 0;
-ctx.fillStyle = "red";
-ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
-
-// Make a blue exit
-ctx.fillStyle = "blue";
-ctx.fillRect(canvas.width - wallWidth,canvas.height - wallWidth,wallWidth,wallWidth);
-
-// Artificial intelligence that can control the red square
-function AI(){
-	var random = Math.floor(Math.random() * 4);
-	// Move the red square in all directions
-	if(random == 0){
-		if(squareX + wallWidth < canvas.width){
-			squareX+=wallWidth;
-		}
-	}
-	else if(random == 1){
-		if(squareY + wallWidth < canvas.height){
-			squareY+=wallWidth;
-		}
-	}
-	else if(random == 2){
-		if(squareX - wallWidth >= 0){
-			squareX-=wallWidth;
-		}
-	}
-	else if(random == 3){
-		if(squareY - wallWidth >= 0){
-			squareY-=wallWidth;
-		}
-	}
-	ctx.fillStyle = "red";
-	ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
-	
-	// Destroy a black wall every 3 seconds
-	setTimeout(destroyWall,3000);
-	
-	// Check if the red square is at the blue exit
-	if(squareX == canvas.width - wallWidth && squareY == canvas.height - wallWidth){
-		// Reset the game
-		x = 0;
-		y = 0;
-		squareX = 0;
-		squareY = 0;
-		ctx.clearRect(0,0,canvas.width,canvas.height);
-		drawMaze();
-		ctx.fillStyle = "red";
-		ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
-		ctx.fillStyle = "blue";
-		ctx.fillRect(canvas.width - wallWidth,canvas.height - wallWidth,wallWidth,wallWidth);
-	}
-	
-	// Move the red square every second
-	setTimeout(AI,100);
-}
-AI();
-
-// Function to destroy a wall
-function destroyWall(){
-	// Check if the red square position is on a wall
-	if(x == squareX && y == squareY){
-		ctx.clearRect(x,y,wallWidth,wallWidth);
-	}
-}
-
-</script>
-
-</body>
-</html>
-
+<br><br>
 Write a game in HTML with a Maze in a 1000 x 1000 pixels canvas that has an exit and a red dot that has an artificial intelligence that learns how to control the red dot and learns how to escape the Maze. If the red dot escapes the Maze reset the game.
 
 
@@ -391,6 +275,124 @@ function startGame(){
         draw();
         update();
     }, 1000/60);
+}
+
+</script>
+
+</body>
+</html>
+<br>
+<br>
+Write a code in HTML with a random generated Maze with black walls in a canvas that has an blue exit and a red square that is in the canvas that has an artificial intelligence that learns how to control the red square and learns how to escape the Maze. If the red dot touches the exit the Maze reset the game. The red square also can destroy a black wall every 3 seconds and move in all directions every second. It also cant move onto a position it already been.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+// Create a random Maze with black walls
+var wallWidth = 10;
+var x = 0;
+var y = 0;
+function drawMaze(){
+	ctx.fillStyle = "black";
+	ctx.fillRect(x,y,wallWidth,wallWidth);
+	x+=wallWidth;
+	if(x > canvas.width - wallWidth){
+		x = 0;
+		y+=wallWidth;
+	}
+	if(y > canvas.height - wallWidth){
+		y = 0;
+	}
+	if(y < canvas.height - wallWidth){
+		setTimeout(drawMaze,5);
+	}
+}
+drawMaze();
+
+// Create a red square
+var squareX = 0;
+var squareY = 0;
+ctx.fillStyle = "red";
+ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
+
+// Make a blue exit
+ctx.fillStyle = "blue";
+ctx.fillRect(canvas.width - wallWidth,canvas.height - wallWidth,wallWidth,wallWidth);
+
+// Artificial intelligence that can control the red square
+function AI(){
+	var random = Math.floor(Math.random() * 4);
+	// Move the red square in all directions
+	if(random == 0){
+		if(squareX + wallWidth < canvas.width){
+			squareX+=wallWidth;
+		}
+	}
+	else if(random == 1){
+		if(squareY + wallWidth < canvas.height){
+			squareY+=wallWidth;
+		}
+	}
+	else if(random == 2){
+		if(squareX - wallWidth >= 0){
+			squareX-=wallWidth;
+		}
+	}
+	else if(random == 3){
+		if(squareY - wallWidth >= 0){
+			squareY-=wallWidth;
+		}
+	}
+	ctx.fillStyle = "red";
+	ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
+	
+	// Destroy a black wall every 3 seconds
+	setTimeout(destroyWall,3000);
+	
+	// Check if the red square is at the blue exit
+	if(squareX == canvas.width - wallWidth && squareY == canvas.height - wallWidth){
+		// Reset the game
+		x = 0;
+		y = 0;
+		squareX = 0;
+		squareY = 0;
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		drawMaze();
+		ctx.fillStyle = "red";
+		ctx.fillRect(squareX,squareY,wallWidth,wallWidth);
+		ctx.fillStyle = "blue";
+		ctx.fillRect(canvas.width - wallWidth,canvas.height - wallWidth,wallWidth,wallWidth);
+	}
+	
+	// Move the red square every second
+	setTimeout(AI,1000);
+}
+AI();
+
+// Function to destroy a wall
+function destroyWall(){
+	// Check if the red square position is on a wall
+	if(x == squareX && y == squareY){
+		ctx.clearRect(x,y,wallWidth,wallWidth);
+	}
 }
 
 </script>
