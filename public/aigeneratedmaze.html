@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red Dot Game</title>
+    <h1>Write a code in HTML about a game where you control a red dot with the hotkeys in a canvas. In the canvas is a random generating maze with blue walls that is infinite.
+</h1>
+    <style>
+     #gameCanvas {
+        border: 1px solid #d3d3d3;
+        background-color: #f1f1f1;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Red Dot Game</h1>
+    <p>Control the red dot with the arrow keys on the canvas.</p>
+    <canvas id="gameCanvas" width="300" height="300"></canvas>
+    <script>
+      // Generate a random maze
+      let maze = [];
+      for (let i = 0; i < 10; i++) {
+        maze.push([]);
+        for (let j = 0; j < 10; j++) {
+          maze[i][j] = Math.random() < 0.5 ? 0 : 1;
+        }
+      }
+      
+      // Get the canvas element
+      let canvas = document.getElementById("gameCanvas");
+      let ctx = canvas.getContext("2d");
+      
+      // Draw the maze
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          if (maze[i][j] === 1) {
+            ctx.fillStyle = "blue";
+            ctx.fillRect(i * 30, j * 30, 30, 30);
+          }
+        }
+      }
+      
+      // Draw the red dot
+      let redX = 0;
+      let redY = 0;
+      ctx.fillStyle = "red";
+      ctx.fillRect(redX, redY, 30, 30);
+      
+      // Move the red dot in response to key presses
+      document.onkeydown = checkKey;
+
+      function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '38') {
+          // up arrow
+          redY = redY - 30;
+        }
+        else if (e.keyCode == '40') {
+          // down arrow
+          redY = redY + 30;
+        }
+        else if (e.keyCode == '37') {
+           // left arrow
+           redX = redX - 30;
+        }
+        else if (e.keyCode == '39') {
+           // right arrow
+           redX = redX + 30;
+        }
+        ctx.fillStyle = "red";
+        ctx.fillRect(redX, redY, 30, 30);
+     }
+    </script>
+  </body>
+</html>
