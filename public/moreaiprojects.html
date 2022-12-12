@@ -1,0 +1,126 @@
+Write a game in HTML about a blue dot, that gets chased by a slower red dot which follows the blue dot in each direction. If the red dot touches the blue one the game restarts. Create a score and give the blue dot Hotkeys to control it.
+
+<html>
+<head>
+  <title>Chasing Game</title>
+  <style>
+    body {
+      background-color: #fefefe;
+    }
+    #canvas {
+      border: 1px solid #999;
+    }
+  </style>
+  <script>
+    // JavaScript code
+    // Canvas Variables
+    var canvas;
+    var context;
+
+    // Dot Variables
+    var blueDot;
+    var redDot;
+    var score;
+
+    // Function to deal with keypresses
+    function keyDown(e) {
+      switch(e.keyCode) {
+        case 37: // left
+          blueDot.x -= 50;
+          break;
+        case 38: // up
+          blueDot.y -= 50;
+          break;
+        case 39: // right
+          blueDot.x += 50;
+          break;
+        case 40: // down
+          blueDot.y += 50;
+          break;
+      }
+    }
+
+    // Function to restart the game
+    function restartGame() {
+      blueDot.x = 50;
+      blueDot.y = 50;
+      blueDot.radius = 10;
+      redDot.x = 200;
+      redDot.y = 200;
+      redDot.radius = 10;
+      score = 0;
+    }
+
+    // Function to draw the dots
+    function drawDot(dot) {
+      context.beginPath();
+      context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2, false);
+      context.fillStyle = dot.color;
+      context.fill();
+      context.closePath();
+    }
+
+    // Function to update the dots
+    function updateDots() {
+      // Move the red dot towards the blue dot
+      var dx = blueDot.x - redDot.x;
+      var dy = blueDot.y - redDot.y;
+      redDot.x += dx * 0.05;
+      redDot.y += dy * 0.05;
+      // Check for collision
+      if (Math.abs(dx) < 20 && Math.abs(dy) < 20) {
+        restartGame();
+      }
+      // Draw the dots
+      drawDot(blueDot);
+      drawDot(redDot);
+    }
+
+    // Function to update the score
+    function updateScore() {
+      score += 1;
+      context.font = '20px sans-serif';
+      context.fillText(score, 10, 30);
+    }
+
+    // Function to run the game
+    function run() {
+      // Clear the canvas
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      // Update and draw the dots
+      updateDots();
+      // Update and draw the score
+      updateScore();
+      // Request a new animation frame
+      requestAnimationFrame(run);
+    }
+
+    // Function to initialize the game
+    function init() {
+      // Get the canvas element
+      canvas = document.getElementById('canvas');
+      // Get the context
+      context = canvas.getContext('2d');
+      // Set the canvas width and height
+      canvas.width = 300;
+      canvas.height = 300;
+      // Create the dots
+      blueDot = {x: 50, y: 50, radius: 10, color: '#0000FF'};
+      redDot = {x: 200, y: 200, radius: 10, color: '#FF0000'};
+      // Set the initial score to zero
+      score = 0;
+      // Listen for key presses
+      document.addEventListener('keydown', keyDown);
+      // Start the game loop
+      run();
+    }
+
+    // Initialize the game when the page is loaded
+    window.onload = init;
+  </script>
+</head>
+<body>
+  <h1>Blue Dot Game</h1>
+  <canvas id="canvas"></canvas>
+</body>
+</html>
