@@ -76,117 +76,40 @@ function submit1(){
 </script>
     
     
-   <h1 align="center">t2a12 Sort by Fred</h1>
-
-<html><head><script>
-    //script that generates random numbers, and sorts them in ascending order
-    //functin that generates random numbers and stores them in an array, displays them, with a br after each number 
-    //every time the function is called, it generates a new set of random numbers and resets the array
-    var numbers = [];
-    function init(){
-        //disable reset button
-        document.getElementById("reset").disabled = true;
-        //disable sort button
-        document.getElementById("sort").disabled = true;
-    }
-
-    function generateNumbers() {
-        //display numbers have been generated in result tag 
-        document.getElementById("result").innerHTML = "Numbers have been generated";
-
-        document.getElementById("generate").disabled = true;
-        //enable sort button
-        document.getElementById("sort").disabled = false;
 
 
-        for (var i = 0; i < 10; i++) {
-            numbers[i] = Math.floor(Math.random() * 20);
-            //display numbers with br in numbers tag 
-            document.getElementById("numbers").innerHTML += numbers[i] + "<br>";
-            //store numbers in the array
-            numbers[i] = numbers[i];
-        }
-        return numbers;
-    }
-
-    //get the numbers from the array and sort them in ascending order
-   //display the numbers with a br after each one
-    function sortNumbers() {
-        //display numbers have been sorted in results tag
-        document.getElementById("result").innerHTML = "Numbers have been sorted";
-        //disable sort button
-        document.getElementById("sort").disabled = true;
-        //enable reset button
-        document.getElementById("reset").disabled = false;
-
-
-
-        numbers.sort(function (a, b) {
-            return a - b;
-        });
-        for (var i = 0; i < numbers.length; i++) {
-            document.getElementById("sortedNumbers").innerHTML += numbers[i] + "<br>";
-        }
-            //every time the function is called, it generates a new set of random numbers and resets the array
-
+<!DOCTYPE html>
+<html>
+    <head>
         
+    </head>
+    <body>
+          <h1 align="center">t2a12 Sort by Fred</h1>
+        <button onclick="generateRandomNumber()">Generate 1 Number</button>
+        <button onclick="sortNumbersHighLow()">Sort High-Low</button>
+        <button onclick="sortNumbersLowHigh()">Sort Low-High</button>
+        <p id="randomNumbers"></p>
+        <script>
+            let randomNumbers = [];
 
-    }
-//function to reset the array and the display
-    function reset() {
-        numbers = [];
-        document.getElementById("numbers").innerHTML = "";
-        document.getElementById("sortedNumbers").innerHTML = "";
+            function generateRandomNumber() {
+                randomNumbers.push(Math.floor(Math.random() * 10));
+                document.getElementById("randomNumbers").innerHTML = randomNumbers;
+            }
 
-        //enable the generate button
-        document.getElementById("generate").disabled = false;
-        //enable the sort button
-        document.getElementById("sort").disabled = true;
-        //disable reset button
-        document.getElementById("reset").disabled = true;
-        //in result tag, say "reset"
-        document.getElementById("result").innerHTML = "Numbers Have Been Reset";
+            function sortNumbersHighLow() {
+                randomNumbers.sort(function(a, b) {
+                    return b - a;
+                });
+                document.getElementById("randomNumbers").innerHTML = randomNumbers;
+            }
 
-        
-
-    }
-</script>
-</head><body onload="init()"><h2> Use Buttons Below To Generate 20 Random Numbers 0-10</h2>
-<p id="result">Numbers Have Been Reset</p>
-
-<button id="generate" onclick="generateNumbers()">Generate  Random Numbers</button>
-<button id="sort" onclick="sortNumbers()" disabled="">Sort Random Numbers</button> 
-<button id="reset" onclick="reset()" disabled="">Reset Random Numbers</button>
-<br> <br> <br>  
-
-<div id="numbers"></div>
-<div id="sortedNumbers"></div>
-<div id="myDiv01"></div>
-
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
-
-    
-   
-   
-    #numbers {
-        border: #000000 1px solid;
-        width: auto;
-        height: auto;
-        padding: 5px;
-        text-align: center;
-
-        float: left;
-    }
-    #sortedNumbers {
-        float: left;
-        border: #000000 1px solid;
-        width: auto;
-        height: auto;
-        padding: 5px;
-        margin-left: 100px;
-        text-align: center;
-    }
-</style>
-</body></html>
+            function sortNumbersLowHigh() {
+                randomNumbers.sort(function(a, b) {
+                    return a - b;
+                });
+                document.getElementById("randomNumbers").innerHTML = randomNumbers;
+            }
+        </script>
+    </body>
+</html>
