@@ -1,0 +1,223 @@
+Make a Level Editor in html which lets you place blocks which hold the player when colliding with him a player with gravity that you can move and traps that kill the player when hit in a. You can select what to place with a button and it will place on where you left click. The game is in a 500 * 500 canvas which holds the player when colliding with it. you can controll the player with w, a, s, d and enter for jumping. When you placed all the things in the level editor, you can stary the game with a html button.
+
+
+<html>
+<head>
+<title>Level Editor</title>
+<style type="text/css">
+    canvas {
+        background-color: #000000;
+        border: 4px solid #e7e7e7;
+    }
+</style>
+</head>
+<body>
+
+<h1>Level Editor</h1>
+
+<div>
+    <button id="startButton">Start</button>
+    <button id="playerButton">Player</button>
+    <button id="blockButton">Block</button>
+    <button id="trapButton">Trap</button>
+</div>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    // Set up the canvas
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+
+    // Set up the buttons
+    let startButton = document.getElementById("startButton");
+    let playerButton = document.getElementById("playerButton");
+    let blockButton = document.getElementById("blockButton");
+    let trapButton = document.getElementById("trapButton");
+
+    // Set up the player
+    let player = {
+        x: 0,
+        y: 0,
+        width: 10,
+        height: 10,
+        vx: 0,
+        vy: 0
+    };
+
+    // Set up the blocks
+    let blocks = [];
+
+    // Set up the traps
+    let traps = [];
+
+    // Set up the gravity
+    let gravity = 0.2;
+
+    // Set up the selected item
+    let selectedItem = null;
+
+    // Set up the mouse position
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Add event listener for mouse move
+    canvas.addEventListener("mousemove", function(e){
+        mouseX = e.clientX - canvas.offsetLeft;
+        mouseY = e.clientY - canvas.offsetTop;
+    });
+
+    // Add event listener for start button
+    startButton.addEventListener("click", function(){
+        startGame();
+    });
+
+    // Add event listener for player button
+    playerButton.addEventListener("click", function(){
+        selectedItem = "player";
+    });
+
+    // Add event listener for block button
+    blockButton.addEventListener("click", function(){
+        selectedItem = "block";
+    });
+
+    // Add event listener for trap button
+    trapButton.addEventListener("click", function(){
+        selectedItem = "trap";
+    });
+
+    // Add event listener for mouse click
+    canvas.addEventListener("click", function(){
+        if (selectedItem === "player") {
+            player.x = mouseX;
+            player.y = mouseY;
+        } else if (selectedItem === "block") {
+            blocks.push({x: mouseX, y: mouseY, width: 10, height: 10});
+        } else if (selectedItem === "trap") {
+            traps.push({x: mouseX, y: mouseY, width: 10, height: 10});
+        }
+    });
+
+    // Update the game state
+    function update() {
+        // Move the player
+        player.x += player.vx;
+        player.y += player.vy;
+
+        // Apply gravity
+        player.vy += gravity;
+
+        // Check for collisions
+        checkCollisions();
+    }
+
+    // Check for collisions
+    function checkCollisions() {
+        // Check for collisions with blocks
+        for (let i = 0; i < blocks.length; i++) {
+            let block = blocks[i];
+
+            if (player.x + player.width > block.x &&
+                player.x < block.x + block.width &&
+                player.y + player.height > block.y &&
+                player.y < block.y + block.height) {
+
+                // Collision detected
+                player.vy = 0;
+                player.y = block.y - player.height;
+            }
+        }
+
+        // Check for collisions with traps
+        for (let i = 0; i < traps.length; i++) {
+            let trap = traps[i];
+
+            if (player.x + player.width > trap.x &&
+                player.x < trap.x + trap.width &&
+                player.y + player.height > trap.y &&
+                player.y < trap.y + trap.height) {
+
+                // Collision detected
+                player.x = 0;
+                player.y = 0;
+            }
+        }
+
+        // Check for collisions with canvas edges
+        if (player.x + player.width > canvas.width) {
+            player.x = canvas.width - player.width;
+        }
+        if (player.x < 0) {
+            player.x = 0;
+        }
+        if (player.y + player.height > canvas.height) {
+            player.vy = 0;
+            player.y = canvas.height - player.height;
+        }
+        if (player.y < 0) {
+            player.y = 0;
+        }
+    }
+
+    // Draw the game state
+    function draw() {
+        // Clear the canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the blocks
+        context.fillStyle = "#333333";
+        for (let i = 0; i < blocks.length; i++) {
+            let block = blocks[i];
+            context.fillRect(block.x, block.y, block.width, block.height);
+        }
+
+        // Draw the traps
+        context.fillStyle = "#FF0000";
+        for (let i = 0; i < traps.length; i++) {
+            let trap = traps[i];
+            context.fillRect(trap.x, trap.y, trap.width, trap.height);
+        }
+
+        // Draw the player
+        context.fillStyle = "#00FF00";
+        context.fillRect(player.x, player.y, player.width, player.height);
+    }
+
+    // The main game loop
+    function loop() {
+        update();
+        draw();
+        window.requestAnimationFrame(loop);
+    }
+
+    // Start the game
+    function startGame() {
+        // Set up keyboard controls
+        document.addEventListener("keydown", function(e){
+            if (e.key === "a") {
+                player.vx = -3;
+            } else if (e.key === "d") {
+                player.vx = 3;
+            } else if (e.key === "w") {
+                player.vy = -5;
+            } else if (e.key === "s") {
+                player.vy = 5;
+            } else if (e.key === "Enter") {
+                player.vy = -5;
+            }
+        });
+        document.addEventListener("keyup", function(e){
+            if (e.key === "a" || e.key === "d") {
+                player.vx = 0;
+            }
+        });
+
+        // Start the main game loop
+        loop();
+    }
+
+</script>
+
+</body>
+</html>
