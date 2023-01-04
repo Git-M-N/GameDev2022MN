@@ -1,0 +1,122 @@
+Write a game in html that has gravity for all objects like a player or a trap and has a 20 * 20 player that is blue and can move with w, a, s, d and space for jump in a 500*500 canvas with black borders which if collide with the player hold him. Also make plattforms that keep the  player  on them when touching him which are red and 50 * 10. Randomly spawn the plattforms which are red and randomly spawn 20 plattforms at the beginning of the game . Make sure its impossible for the plattforms to spawn in the player. Write the game code with the intention of creating a finished game.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gravity Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #game {
+            background-color: #000;
+            width: 500px;
+            height: 500px;
+            border: solid 1px #000;
+        }
+        #player {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            left: 250px;
+            top: 400px;
+        }
+        .platform {
+            position: absolute;
+            width: 50px;
+            height: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div id="player"></div>
+    </div>
+    <script>
+        // Global Variables
+        let game = document.getElementById('game');
+        let player = document.getElementById('player');
+        let gravity = 0.1;
+        let platforms = [];
+        let platform_num = 20;
+
+        // Player
+        let player_x = 250;
+        let player_y = 400;
+        let player_speedX = 0;
+        let player_speedY = 0;
+        let player_accelX = 0;
+        let player_accelY = 0;
+        let player_jump = -4;
+
+        // Setup platforms
+        for (let i = 0; i < platform_num; i++) {
+            let platform = document.createElement('div');
+            platform.classList.add('platform');
+            let x = Math.random() * (500 - 50);
+            let y = Math.random() * (500 - 10);
+            platform.style.left = x + 'px';
+            platform.style.top = y + 'px';
+            game.appendChild(platform);
+            platforms.push(platform);
+        }
+
+        // Check collisions
+        function checkCollisions() {
+            let player_top = player_y;
+            let player_bottom = player_y + 20;
+            let player_left = player_x;
+            let player_right = player_x + 20;
+
+            for (let i = 0; i < platforms.length; i++) {
+                let platform = platforms[i];
+                let platform_top = parseInt(platform.style.top);
+                let platform_bottom = parseInt(platform.style.top) + 10;
+                let platform_left = parseInt(platform.style.left);
+                let platform_right = parseInt(platform.style.left) + 50;
+
+                if (player_bottom >= platform_top &&
+                    player_top <= platform_bottom &&
+                    player_right >= platform_left &&
+                    player_left <= platform_right) {
+                    player_y = platform_top - 20;
+                    player_speedY = 0;
+                }
+            }
+        }
+
+        // Update
+        function update() {
+            player_speedY += gravity;
+            player_x += player_speedX;
+            player_y += player_speedY;
+            player.style.left = player_x + 'px';
+            player.style.top = player_y + 'px';
+            checkCollisions();
+            requestAnimationFrame(update);
+        }
+
+        // Controls
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 37) { // left
+                player_speedX = -2;
+            }
+            if (e.keyCode === 39) { // right
+                player_speedX = 2;
+            }
+            if (e.keyCode === 32) { // space
+                if (player_speedY == 0) {
+                    player_speedY = player_jump;
+                }
+            }
+        });
+
+        // Call update
+        update();
+    </script>
+</body>
+</html>
