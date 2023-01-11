@@ -1,7 +1,7 @@
-import { level1 } from "./levels/level1.js";
-import { level2 } from "./levels/level2.js";
-import { level3 } from "./levels/level3.js";
-import { writeInfo } from "./info.js";
+import { level1 } from "../levels/level1.js";
+import { level2 } from "../levels/level2.js";
+import { level3 } from "../levels/level3.js";
+import { writeInfo } from "../info.js";
 
 const levelCount = document.getElementById("levelCount");
 
