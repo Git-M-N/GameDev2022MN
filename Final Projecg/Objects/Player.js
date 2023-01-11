@@ -1,4 +1,4 @@
-import { Box } from "./Box.js";
+import { Box } from "../Box.js";
 
 export class Player extends Box {
     constructor(options, type) {
