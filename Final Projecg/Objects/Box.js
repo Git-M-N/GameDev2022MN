@@ -1,4 +1,4 @@
-import { Rectangle } from "./Rectangle.js";
+import { Rectangle } from "../Rectangle.js";
 
 export class Box extends Rectangle {
     constructor(options, type) {
