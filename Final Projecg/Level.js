@@ -1,7 +1,7 @@
-import { canvas, clearCanvas } from "./canvas.js";
-import { hideInfo, writeInfo } from "./info.js";
-import { Timer } from "./Timer.js";
-import { minmax } from "./utils.js";
+import { canvas, clearCanvas } from "../canvas.js";
+import { hideInfo, writeInfo } from "../info.js";
+import { Timer } from "../Timer.js";
+import { minmax } from "../utils.js";
 
 const STATUS = {
     READY: 0,
