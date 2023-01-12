@@ -1,8 +1,8 @@
 import { Level } from "../Level.js";
-import { Player } from "../objects/Player.js";
-import { Rectangle } from "../objects/Rectangle.js";
+import { Player } from "../Objects/Player.js";
+import { Rectangle } from "../Objects/Rectangle.js";
 import { Box } from "../Objects/Box.js";
-import { Goal } from "../objects/Goal.js";
+import { Goal } from "../Objects/Goal.js";
 
 export const level1 = new Level({
     size: [800, 600],
