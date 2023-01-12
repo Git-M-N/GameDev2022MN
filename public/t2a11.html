@@ -33,9 +33,9 @@ function myHitOther(my1,my2){
 
 function myCheckHit(){
    if ( myHitOther('myImg01','myImg02') ){
-       alert('you lose')  
+       alert('you win and go to the actual game')  
        document.getElementById('myImg01').style.left = '20px'
-       location = 't2a13-keydown.html'  // go to your next level
+       location = 'https://git-m-n.github.io/GameDev2022MN/Final/game.html'  // go to your next level
    }
 
 
@@ -49,7 +49,7 @@ function myCheckHit(){
 </script>
 
 <img id="myImg01" style="position:absolute; width:100px; height:80px; top:300px; left:50px;" src="https://i.pinimg.com/originals/6d/d2/1f/6dd21fb057ae478ec876bc3968b00941.gif">
-<img id="myImg02" style="position:absolute; width:100px; height:80px; top:300px; left:250px;" src="https://media2.giphy.com/media/l0HlIibK3l9ozEoJa/giphy.gif?cid=790b76117b7b3d0ab52985c826ed3ce0fba8398beaaea9a3&rid=giphy.gif&ct=g">
+<img id="myImg02" style="position:absolute; width:100px; height:80px; top:300px; left:250px;" src="https://mario.wiki.gallery/images/f/f6/NSMBW_Flagpole_Artwork.png">
 
 <input type="button" value="Auto Background Left" onclick="{
   clearInterval(myClock)
