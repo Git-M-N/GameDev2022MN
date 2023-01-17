@@ -45,4 +45,4 @@ export class Game {
     }
 }
  
-export const game = new Game([level1, level2, level3, level4, level5,]);
+export const game = new Game([level1, level2, level3, level4, level5]);
