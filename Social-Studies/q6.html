@@ -1,0 +1,139 @@
+<style>
+@import url(https://fonts.googleapis.com/css?family=Signika+Negative:400,700);
+
+html, body {
+  height:100%;
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 25px;
+}
+
+html {
+  background: url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29tcGFueSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80') fixed;
+  background-size: 100%;
+}
+
+div {
+  overflow: hidden;
+}
+
+a {
+  color: #322bff;
+  text-decoration: underline;
+  transition: 500ms;
+}
+a:hover {
+  color: #26a1ff;
+}
+
+p {
+  padding: 0 5%;
+}
+
+img {
+  box-shadow: 0px 0px 4px #000;
+}
+
+#header {
+  background: rgba(255, 255, 255, .5);
+  padding: 1%;
+  overflow: hidden;
+  height: 55px;
+}
+#header img {
+  float: left;
+  box-shadow: none;
+}
+#header ul {
+  list-style: none;
+  float: left;
+  padding-left: 10px;
+  margin-top: 15px;
+}
+#header ul li {
+  float: left;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.fullscreen {
+  height: 95%;
+  position: relative;
+}
+.fullscreen .header {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
+}
+
+.white {
+  background: #eeeeec;
+  padding: 0 5%;
+}
+.nobg {
+  background: none;
+  padding: 0 5%;
+  color: #fff;
+  text-shadow: 0px 0px 4px #000;
+}
+.semitrans {
+  background: rgba(255, 255, 255, .5);
+  padding: 0 5%;
+}
+.dark {
+  color: #eeeeec;
+  background: #010105;
+  padding: 0 5%;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.floatleft {
+  float: left;
+  margin: 2%;
+}
+.floatright {
+  float: right;
+  margin 2%;
+}
+
+.more {
+  text-align: center;
+  font-size: 17px;
+}
+.more a {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+.more a:hover {
+  color: #777;
+}</style>
+<script>
+$(document).ready(function() {
+  $("#more").click(function() {
+    $('html, body').animate({
+      scrollTop: $('#test').offset().top
+    },1000); 
+  });
+});</script>
+
+
+<div class="white">
+  <a id="test"></a>
+  <h1>Biggest Companies in Asia</h1>
+  
+  <p> 
+Asia is home to some of the most successful companies in the world. Companies such as Samsung, Alibaba, and Tencent have all achieved success in the region, providing innovative products and services to customers. Samsung, based in South Korea, is the largest electronics manufacturer in the world, producing everything from phones and tablets to appliances and televisions. Alibaba, based in China, is the largest e-commerce company in the world, offering a wide range of products and services. And Tencent, based in China, is one of the world’s largest internet companies, providing a variety of online services and products. All three of these companies have achieved success by providing innovative products and services to customers and keeping up with the rapidly changing technology landscape in Asia.    </p>
+</div>
+
+<div class="semitrans">
+  
+</div>
+<br>
+<br>
+<br>
