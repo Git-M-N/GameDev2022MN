@@ -12,7 +12,8 @@ new Goal({ pos: [3900, 30], size: [50, 50], color: "black" }),
 new Player({ pos: [20, 500], size: [50, 50] }),
 
 
-new Rectangle({ pos: [40 , 200], size: [10, 50], color: "saddlebrown" }),
+new Rectangle({ pos: [200 , 30], size: [10, 50], color: "saddlebrown" }),
+new Rectangle({ pos: [200 , 100], size: [10, 50], color: "saddlebrown" }),
 
 //Ground
 new Rectangle({ pos: [0 , 560], size: [2000, 40], color: "saddlebrown" }),
