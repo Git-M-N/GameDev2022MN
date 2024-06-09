@@ -5,14 +5,17 @@ import { Box } from "../Objects/Box.js";
 import { Goal } from "../Objects/Goal.js";
 
 export const level3 = new Level({
-    size: [800, 1200],
+    size: [800, 600],
     objects: [
-        new Goal({ pos: [10, 30], size: [50, 50], color: "black" }),
-        new Player({ pos: [30, 1160], size: [40, 40] }),
-        new Rectangle({ pos: [400, 1000], size: [100, 10], color: "blue" }),
-        new Rectangle({ pos: [400, 800], size: [100, 10], color: "blue" }),
-        new Rectangle({ pos: [400, 600], size: [100, 10], color: "blue" }),
-        new Rectangle({ pos: [400, 400], size: [100, 10], color: "blue" }),
-        new Box({ pos: [450, 350], size: [50, 50], color: "purple" }),
+        new Goal({ pos: [700, 20], size: [50, 50], color: "black" }),
+        new Player({ pos: [20, 500], size: [40, 40] }),
+        new Rectangle({ pos: [600 , 100], size: [200, 10], color: "blue" }),
+        new Rectangle({ pos: [510 , 200], size: [20, 10], color: "blue" }),
+        new Rectangle({ pos: [500 , -400], size: [10, 700], color: "blue" }),
+        new Rectangle({ pos: [60 , 100], size: [200, 10], color: "blue" }),
+        new Rectangle({ pos: [0 , 300], size: [100, 10], color: "blue" }),
+        new Box({ pos: [180, 520], size: [80, 80], color: "orange" }),
+        new Box({ pos: [40, 240], size: [60, 60], color: "green" }),
+        new Box({ pos: [150, 0], size: [80, 100], color: "purple" })
     ],
 });
