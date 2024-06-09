@@ -11,7 +11,7 @@ export const level1 = new Level({
 new Goal({ pos: [3900, 30], size: [50, 50], color: "black" }),
 new Player({ pos: [20, 500], size: [50, 50] }),
 
-
+new Rectangle({ pos: [10 , 0], size: [300, 30], color: "white" }),
 new Rectangle({ pos: [200 , 200], size: [50, 10], color: "saddlebrown" }),
 new Rectangle({ pos: [200 , 250], size: [50, 10], color: "saddlebrown" }),
 
