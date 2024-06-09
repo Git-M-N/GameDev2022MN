@@ -29,7 +29,8 @@ export class Game {
         levelCount.innerText = "Level " + this.currentLevelIndex;
         writeInfo(
             "Press 'Space' to start or pause the game.<br>" +
-                "Press 'r' to restart the level."
+                "Press 'r' to restart the level." +
+                    "Use the arrows ro move"
         );
     }
 
