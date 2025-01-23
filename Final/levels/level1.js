@@ -8,7 +8,7 @@ export const level1 = new Level({
      size: [4000, 600],
     objects: [
    
-new Goal({ pos: [3900, 30], size: [1, 1], color: "black" }),
+new Goal({ pos: [3900, 30], size: [30, 30], color: "black" }),
 new Player({ pos: [20, 500], size: [20, 20] }),
 
 new Rectangle({ pos: [10 , 0], size: [300, 30], color: "white" }),
